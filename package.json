@@ -1,0 +1,14 @@
+{
+  "name": "Pathfinder_1_Treasure_Generator_with_Spheres",
+  "source": "src/index.html",
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.0",
+    "bootstrap-icons": "^1.9.1",
+    "jquery": "^3.6.1",
+    "parcel": "^2.7.0"
+  },
+  "devDependencies": {
+    "events": "^3.3.0"
+  }
+}

@@ -1,6 +1,7 @@
 {
     "title":"Compounds",
     "description":"Generally speaking, potions as consumables begin to see less use as players advance beyond lower levels because they are limited by what spells they can contain. Compounds on the other hand are more like scrolls in that they do not possess this limitation, for this reason the table below have compounds generated not by classification (minor, medium, or major), but by adventure tier (Tier 1: levels 1-4, Tier 2: levels 5-8, Tier 3: levels 9-12, Tier 4: levels 13-16, Tier 5: 17-20).",
+    "source":"http://spheresofpower.wikidot.com/loot-tables#toc6",
     "tables": [
         {
             "tier":"1",
@@ -200,9 +201,9 @@
                     "url":"http://spheresofpower.wikidot.com/compounds#toc30",
                     "marketPrice":200
                 },
-// 77-78 	Ghost sight potion, lesser 	200 gp
+// 76-78 	Ghost sight potion, lesser 	200 gp
                 {
-                    "minPercent":77,
+                    "minPercent":76,
                     "maxPercent":78,
                     "item":"Ghost sight potion, lesser",
                     "url":"http://spheresofpower.wikidot.com/compounds#toc44",
@@ -271,6 +272,13 @@
                     "item":"Whetstone of honed edges, lesser",
                     "url":"http://spheresofpower.wikidot.com/compounds#toc125",
                     "marketPrice":200
+                },
+                {
+                    "minPercent":100,
+                    "maxPercent":100,
+                    "item":"GM's choice",
+                    "url":"http://spheresofpower.wikidot.com/compounds",
+                    "marketPrice":0
                 }
 // 100 	GM’s choice
             ]
@@ -600,14 +608,21 @@
                     "item":"See hazard potion, lesser",
                     "url":"http://spheresofpower.wikidot.com/compounds#toc106",
                     "marketPrice":800
+                },
+                {
+                    "minPercent":100,
+                    "maxPercent":100,
+                    "item":"GM's choice",
+                    "url":"http://spheresofpower.wikidot.com/compounds",
+                    "marketPrice":0
                 }
 // 100 	GM’s choice
             ]
         },
         {
-            "tier":"1",
-            "minLevel":1,
-            "maxLevel":4,
+            "tier":"3",
+            "minLevel":9,
+            "maxLevel":12,
             "rolls": [
 // % 	Compound 	Market Price
                 {
@@ -1096,10 +1111,443 @@
                     "item":"Whetstone of honed edges, overwhelming",
                     "url":"http://spheresofpower.wikidot.com/compounds#toc125",
                     "marketPrice":1800
+                },
+                {
+                    "minPercent":100,
+                    "maxPercent":100,
+                    "item":"GM's choice",
+                    "url":"http://spheresofpower.wikidot.com/compounds",
+                    "marketPrice":0
                 }
 // 100 	GM’s choice
             ]
-
+        },
+        {
+            "tier":"4",
+            "minLevel":13,
+            "maxLevel":16,
+            "rolls": [
+                {
+                    "minPercent":1,
+                    "maxPercent":3,
+                    "item":"Fire poison, moderate",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc39",
+                    "marketPrice":700
+                },
+                {
+                    "minPercent":4,
+                    "maxPercent":5,
+                    "item":"Armored mage potion, common",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc9",
+                    "marketPrice":750
+                },
+                {
+                    "minPercent":6,
+                    "maxPercent":7,
+                    "item":"Electric oil, moderate",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc33",
+                    "marketPrice":750
+                },
+                {
+                    "minPercent":8,
+                    "maxPercent":8,
+                    "item":"Monstrous transformation potion",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc62",
+                    "marketPrice":750
+                },
+                {
+                    "minPercent":9,
+                    "maxPercent":9,
+                    "item":"Protection potion, rare",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc89",
+                    "marketPrice":750
+                },
+                {
+                    "minPercent":10,
+                    "maxPercent":10,
+                    "item":"Scrying incense, lesser",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc105",
+                    "marketPrice":750
+                },
+                {
+                    "minPercent":11,
+                    "maxPercent":11,
+                    "item":"Stricture consecration oil",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc119",
+                    "marketPrice":750
+                },
+                {
+                    "minPercent":12,
+                    "maxPercent":12,
+                    "item":"Blindfold poison",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc14",
+                    "marketPrice":800
+                },
+                {
+                    "minPercent":13,
+                    "maxPercent":13,
+                    "item":"Object repair oil, greater",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc64",
+                    "marketPrice":800
+                },
+                {
+                    "minPercent":14,
+                    "maxPercent":15,
+                    "item":"See hazard potion, lesser",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc106",
+                    "marketPrice":800
+                },
+                {
+                    "minPercent":16,
+                    "maxPercent":16,
+                    "item":"Clean air incense",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc19",
+                    "marketPrice":850
+                },
+                {
+                    "minPercent":17,
+                    "maxPercent":17,
+                    "item":"Acorn of pummeling branches, large",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc6",
+                    "marketPrice":900
+                },
+                {
+                    "minPercent":18,
+                    "maxPercent":19,
+                    "item":"Animate object oil, mild",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc8",
+                    "marketPrice":900
+                },
+                {
+                    "minPercent":20,
+                    "maxPercent":21,
+                    "item":"Extract blood construct oil, small",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc37",
+                    "marketPrice":900
+                },
+                {
+                    "minPercent":22,
+                    "maxPercent":23,
+                    "item":"Infiltration potion, lesser",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc53",
+                    "marketPrice":900
+                },
+                {
+                    "minPercent":24,
+                    "maxPercent":25,
+                    "item":"Sphere focus stimulant (+3)",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc116",
+                    "marketPrice":900
+                },
+                {
+                    "minPercent":26,
+                    "maxPercent":27,
+                    "item":"Dark sacrifice potion, moderate",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc29",
+                    "marketPrice":1000
+                },
+                {
+                    "minPercent":28,
+                    "maxPercent":29,
+                    "item":"Embalming oil",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc36",
+                    "marketPrice":1000
+                },
+                {
+                    "minPercent":30,
+                    "maxPercent":31,
+                    "item":"Incendiary grenade",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc52",
+                    "marketPrice":1000
+                },
+                {
+                    "minPercent":32,
+                    "maxPercent":33,
+                    "item":"Peerless courage potion",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc73",
+                    "marketPrice":1000
+                },
+                {
+                    "minPercent":34,
+                    "maxPercent":35,
+                    "item":"Protection potion, legendary",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc89",
+                    "marketPrice":1000
+                },
+                {
+                    "minPercent":36,
+                    "maxPercent":37,
+                    "item":"Sidhe visage potion",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc110",
+                    "marketPrice":1000
+                },
+                {
+                    "minPercent":38,
+                    "maxPercent":39,
+                    "item":"Spell cleansing elixir, greater",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc115",
+                    "marketPrice":1000
+                },
+                {
+                    "minPercent":40,
+                    "maxPercent":41,
+                    "item":"Animate object oil, large",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc8",
+                    "marketPrice":1200
+                },
+                {
+                    "minPercent":42,
+                    "maxPercent":43,
+                    "item":"Sphere focus stimulant (+4)",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc116",
+                    "marketPrice":1200
+                },
+                {
+                    "minPercent":44,
+                    "maxPercent":45,
+                    "item":"Whetstone of honed edges, strong",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc125",
+                    "marketPrice":1200
+                },
+                {
+                    "minPercent":46,
+                    "maxPercent":47,
+                    "item":"Extract blood construct oil, medium",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc37",
+                    "marketPrice":1350
+                },
+                {
+                    "minPercent":48,
+                    "maxPercent":50,
+                    "item":"Armored mage potion, uncommon",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc9",
+                    "marketPrice":1500
+                },
+                {
+                    "minPercent":51,
+                    "maxPercent":53,
+                    "item":"Contingent energy resistance potion, superior",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc25",
+                    "marketPrice":1500
+                },
+                {
+                    "minPercent":54,
+                    "maxPercent":56,
+                    "item":"Electric oil, superior",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc33",
+                    "marketPrice":1500
+                },
+                {
+                    "minPercent":57,
+                    "maxPercent":57,
+                    "item":"Form breaker oil, greater",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc42",
+                    "marketPrice":1500
+                },
+                {
+                    "minPercent":58,
+                    "maxPercent":58,
+                    "item":"Infiltration potion, greater",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc53",
+                    "marketPrice":1500
+                },
+                {
+                    "minPercent":59,
+                    "maxPercent":59,
+                    "item":"Sphere focus stimulant (+5)",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc116",
+                    "marketPrice":1500
+                },
+                {
+                    "minPercent":60,
+                    "maxPercent":60,
+                    "item":"Troll’s claret",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc120",
+                    "marketPrice":1500
+                },
+                {
+                    "minPercent":61,
+                    "maxPercent":62,
+                    "item":"Ghost sight potion, greater",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc44",
+                    "marketPrice":1600
+                },
+                {
+                    "minPercent":63,
+                    "maxPercent":64,
+                    "item":"Crystal grenade, moderate",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc26",
+                    "marketPrice":1650
+                },
+                {
+                    "minPercent":65,
+                    "maxPercent":65,
+                    "item":"Acorn of pummeling branches, huge",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc6",
+                    "marketPrice":1800
+                },
+                {
+                    "minPercent":66,
+                    "maxPercent":66,
+                    "item":"Animate object oil, strong",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc8",
+                    "marketPrice":1800
+                },
+                {
+                    "minPercent":67,
+                    "maxPercent":67,
+                    "item":"Beast warden flask",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc12",
+                    "marketPrice":1800
+                },
+                {
+                    "minPercent":68,
+                    "maxPercent":68,
+                    "item":"Dissolution oil",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc32",
+                    "marketPrice":1800
+                },
+                {
+                    "minPercent":69,
+                    "maxPercent":69,
+                    "item":"Revealing dust, moderate",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc96",
+                    "marketPrice":1800
+                },
+                {
+                    "minPercent":70,
+                    "maxPercent":70,
+                    "item":"Vanishing dust, moderate",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc122",
+                    "marketPrice":1800
+                },
+                {
+                    "minPercent":71,
+                    "maxPercent":71,
+                    "item":"Whetstone of honed edges, overwhelming",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc125",
+                    "marketPrice":1800
+                },
+                {
+                    "minPercent":72,
+                    "maxPercent":74,
+                    "item":"Catfolk guise potion, superior",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc18",
+                    "marketPrice":2000
+                },
+                {
+                    "minPercent":75,
+                    "maxPercent":76,
+                    "item":"Fire poison, superior",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc39",
+                    "marketPrice":2100
+                },
+                {
+                    "minPercent":77,
+                    "maxPercent":78,
+                    "item":"Anathema poison",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc7",
+                    "marketPrice":2250
+                },
+                {
+                    "minPercent":79,
+                    "maxPercent":80,
+                    "item":"Armored mage potion, rare",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc9",
+                    "marketPrice":2250
+                },
+                {
+                    "minPercent":81,
+                    "maxPercent":82,
+                    "item":"Extract blood construct oil, large",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc37",
+                    "marketPrice":2250
+                },
+                {
+                    "minPercent":83,
+                    "maxPercent":84,
+                    "item":"Animate object oil, very strong",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc8",
+                    "marketPrice":2400
+                },
+                {
+                    "minPercent":85,
+                    "maxPercent":85,
+                    "item":"Light of true magic",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc56",
+                    "marketPrice":2500
+                },
+                {
+                    "minPercent":86,
+                    "maxPercent":86,
+                    "item":"Scrying incense, greater",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc105",
+                    "marketPrice":2500
+                },
+                {
+                    "minPercent":87,
+                    "maxPercent":88,
+                    "item":"Acorn of pummeling branches, gargantuan",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc6",
+                    "marketPrice":2700
+                },
+                {
+                    "minPercent":89,
+                    "maxPercent":90,
+                    "item":"Extract blood construct oil, huge",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc37",
+                    "marketPrice":2700
+                },
+                {
+                    "minPercent":91,
+                    "maxPercent":92,
+                    "item":"Armored mage potion, legendary",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc9",
+                    "marketPrice":3000
+                },
+                {
+                    "minPercent":93,
+                    "maxPercent":94,
+                    "item":"Dark sacrifice potion, superior",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc29",
+                    "marketPrice":3000
+                },
+                {
+                    "minPercent":95,
+                    "maxPercent":96,
+                    "item":"Crystal grenade, superior",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc26",
+                    "marketPrice":3150
+                },
+                {
+                    "minPercent":97,
+                    "maxPercent":97,
+                    "item":"Extract blood construct oil, gargantuan",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc37",
+                    "marketPrice":3150
+                },
+                {
+                    "minPercent":98,
+                    "maxPercent":98,
+                    "item":"Animate object oil, perfect",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc8",
+                    "marketPrice":3200
+                },
+                {
+                    "minPercent":99,
+                    "maxPercent":99,
+                    "item":"See hazard potion, greater",
+                    "url":"http://spheresofpower.wikidot.com/compounds#toc106",
+                    "marketPrice":3200
+                },
+                {
+                    "minPercent":100,
+                    "maxPercent":100,
+                    "item":"GM's choice",
+                    "url":"http://spheresofpower.wikidot.com/compounds",
+                    "marketPrice":0
+                }
+            ]
         }
     ]
 }

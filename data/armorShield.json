@@ -1,0 +1,163 @@
+{
+    "title": "Armor and shields",
+    "description": "Random armors and shields from Ultimate Equipment.",
+    "source": "http://paizo.com/products/btpy8tmc?Pathfinder-Roleplaying-Game-Ultimate-Equipment",
+    "tables": [
+        [
+            {
+                "minPercent": 1,
+                "maxPercent": 4,
+                "item": "Banded mail",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Banded%20mail",
+                "marketPrice": 250
+            },
+            {
+                "minPercent": 5,
+                "maxPercent": 11,
+                "item": "Breastplate",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Breastplate",
+                "marketPrice": 200
+            },
+            {
+                "minPercent": 12,
+                "maxPercent": 14,
+                "item": "Buckler",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Buckler",
+                "marketPrice": 5
+            },
+            {
+                "minPercent": 15,
+                "maxPercent": 21,
+                "item": "Chain shirt",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Chain%20shirt",
+                "marketPrice": 100
+            },
+            {
+                "minPercent": 22,
+                "maxPercent": 27,
+                "item": "Chainmail",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Chainmail",
+                "marketPrice": 150
+            },
+            {
+                "minPercent": 28,
+                "maxPercent": 34,
+                "item": "Full plate",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Full%20plate",
+                "marketPrice": 1500
+            },
+            {
+                "minPercent": 35,
+                "maxPercent": 39,
+                "item": "Half-plate",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Half-plate",
+                "marketPrice": 600
+            },
+            {
+                "minPercent": 40,
+                "maxPercent": 45,
+                "item": "Heavy steel shield",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Heavy%20steel",
+                "marketPrice": 20
+            },
+            {
+                "minPercent": 46,
+                "maxPercent": 51,
+                "item": "Heavy wooden shield",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Heavy%20wooden",
+                "marketPrice": 20
+            },
+            {
+                "minPercent": 52,
+                "maxPercent": 55,
+                "item": "Hide shirt",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Hide%20shirt",
+                "marketPrice": 20
+            },
+            {
+                "minPercent": 56,
+                "maxPercent": 61,
+                "item": "Leather armor",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Leather",
+                "marketPrice": 10
+            },
+            {
+                "minPercent": 62,
+                "maxPercent": 65,
+                "item": "Light steel shield",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Light%20steel",
+                "marketPrice": 10
+            },
+            {
+                "minPercent": 66,
+                "maxPercent": 69,
+                "item": "Light wooden shield",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Heavy%20wooden",
+                "marketPrice": 10
+            },
+            {
+                "minPercent": 70,
+                "maxPercent": 72,
+                "item": "Padded armor",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Padded",
+                "marketPrice": 5
+            },
+            {
+                "minPercent": 73,
+                "maxPercent": 77,
+                "item": "Scale mail",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Scale%20mail",
+                "marketPrice": 50
+            },
+            {
+                "minPercent": 78,
+                "maxPercent": 81,
+                "item": "Splint mail",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Splint%20mail",
+                "marketPrice": 200
+            },
+            {
+                "minPercent": 82,
+                "maxPercent": 87,
+                "item": "Studded leather armor",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Studded%20leather",
+                "marketPrice": 25
+            },
+            {
+                "minPercent": 88,
+                "maxPercent": 90,
+                "item": "Tower shield",
+                "url": "https://www.aonprd.com/EquipmentArmorDisplay.aspx?ItemName=Tower",
+                "marketPrice": 30
+            },
+            {
+                "minPercent": 91,
+                "maxPercent": 93,
+                "item": "GM choice's of light armor",
+                "url": "https://www.aonprd.com/EquipmentArmor.aspx",
+                "marketPrice": 0
+            },
+            {
+                "minPercent": 94,
+                "maxPercent": 95,
+                "item": "GM choice's of medium armor",
+                "url": "https://www.aonprd.com/EquipmentArmor.aspx",
+                "marketPrice": 0
+            },
+            {
+                "minPercent": 96,
+                "maxPercent": 98,
+                "item": "GM choice's of heavy armor",
+                "url": "https://www.aonprd.com/EquipmentArmor.aspx",
+                "marketPrice": 0
+            },
+            {
+                "minPercent": 99,
+                "maxPercent": 100,
+                "item": "GM choice's of shield",
+                "url": "https://www.aonprd.com/EquipmentArmor.aspx",
+                "marketPrice": 0
+            }
+        ]
+    ]
+}

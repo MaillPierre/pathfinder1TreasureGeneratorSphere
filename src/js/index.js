@@ -1,7 +1,17 @@
 import $ from 'jquery';
 import * as EventEmitter from 'events';
 
-import compoundsFile from "../../data/compounds.json";// assert { type: `json` };
+import compoundsFile from "../../data/compounds.json";
+import treasureValuePerEncounterFile from "../../data/treasureValuePerEncounter.json";
+import armorShieldFile from "../../data/armorShield.json";
+
+const treasureBudgetModifier = new Map([
+    ["Incidental", 0.5],
+    ["Standard", 1],
+    ["Double", 2],
+    ["Triple", 3]
+]);
+var defaultTreasureBudgetModifier = treasureBudgetModifier.get("Standard");
 
 function roll(intMax) {
 
@@ -39,7 +49,7 @@ function roll100() {
 class ItemTable {
 
     constructor(itemArray) {
-        this.tableDiv =  $(document.createElement('table'));
+        this.tableDiv = $(document.createElement('table'));
         this.tableDiv.addClass("table")
         var tableHeader = $(document.createElement('thead'));
         this.tableDiv.append(tableHeader);
@@ -60,10 +70,10 @@ class ItemTable {
         this.tableBody = $(document.createElement('tbody'));
         this.tableDiv.append(this.tableBody)
 
-        if(itemArray != undefined) {
+        if (itemArray != undefined) {
             itemArray.forEach(rollObject => {
                 this.addItem(rollObject);
-    
+
             });
         }
     }
@@ -102,108 +112,225 @@ class ItemTable {
     }
 }
 
-$(() => {
-
-    console.log(JSON.stringify(compoundsFile));
-    var contentDiv = $("#mainContentCol");
-
-    const compounds = {
-        toHtml: function () {
-
-            // Title and description
-            var compoundsDiv = $(document.createElement('div'));
-            compoundsDiv.addClass('row');
-            var compoundsCol = $(document.createElement('div'));
-            compoundsDiv.addClass('col');
-            compoundsDiv.append(compoundsCol);
-            var compoundsTitleDiv = $(document.createElement('div'));
-            compoundsTitleDiv.addClass('row')
-            var compoundsTitle = $(document.createElement('h1'));
-            compoundsTitle.text(compoundsFile.title);
-            compoundsTitleDiv.append(compoundsTitle)
-            var compoundsDescDiv = $(document.createElement('div'));
-            compoundsDescDiv.addClass('row')
-            var compoundsDesc = $(document.createElement('p'));
-            compoundsDesc.text(compoundsFile.description);
-            compoundsDescDiv.append(compoundsDesc)
-
-            var compoundsTablesDiv = $(document.createElement('div'));
-            compoundsTablesDiv.addClass('row')
-            var compoundsTablesCol = $(document.createElement('div'));
-            compoundsTablesCol.addClass('col')
-            compoundsTablesDiv.append(compoundsTablesCol);
-            // Tables
-            compoundsFile.tables.forEach(tableObject => {
-                var tableTitle = $(document.createElement('h4'));
-                tableTitle.text("Tier " + tableObject.tier + " Min:" + tableObject.minLevel + " Max:" + tableObject.maxLevel);
-                compoundsTablesCol.append(tableTitle);
-
-                var itemTable = new ItemTable(tableObject.rolls);
-                var tableHtml = itemTable.getHtml();
-
-                var randomDiv = $(document.createElement('div'));
-                randomDiv.addClass("row")
-                var randomButton = $(document.createElement('a'));
-                randomButton.addClass("btn");
-                randomButton.text("RANDOM")
-                var randomItemTable = new ItemTable();
-                var randomTable = randomItemTable.getHtml();
-                randomButton.on("click", event => {
-                    var randomObject = this.rollForTier(tableObject.tier);
-                    if (randomObject != undefined) {
-                        randomItemTable.addItem(randomObject);
-                    }
-                });
-                randomDiv.append(randomButton)
-                randomDiv.append(randomTable)
-
-                compoundsTablesCol.append(tableHtml);
-                compoundsTablesCol.append(randomDiv);
-            });
-
-
-            compoundsCol.append(compoundsTitleDiv);
-            compoundsCol.append(compoundsDescDiv);
-            compoundsCol.append(compoundsTablesDiv);
-
-            return compoundsDiv;
-        },
-
-        rollForLevel: function (level) {
-            var table = compoundsFile.tables.find(tableObject => (tableObject.minLevel >= level && tableObject <= level));
-            if (table != undefined) {
-                const randomNumber = roll100();
-                var randomObject = table.rolls.find(rollObject => {
-                    return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
-                });
-                if (randomObject != undefined) {
-                    return randomObject;
-                } else {
-                    throw new Error("Roll " + randomNumber + " not found for level " + level + " in table tier " + tableObject.tier)
-                }
+const treasureValuePerEncounter = {
+    valueForSlowProgress(apl) {
+        if (Number.isInteger(apl)) {
+            var valueObject = treasureValuePerEncounterFile.find(valueObject => valueObject.apl == apl);
+            if (valueObject != undefined) {
+                return valueObject.slow * treasureBudgetModifier;
             } else {
-                throw new Error("Table not found for level " + level)
+                throw new Error("No budget found for APL " + apl);
             }
-        },
+        } else {
+            throw new Error("APL is not a number");
+        }
+    },
 
-        rollForTier: function (tier) {
-            var table = compoundsFile.tables.find(tableObject => (tableObject.tier == tier));
-            if (table != undefined) {
-                const randomNumber = roll100();
-                var randomObject = table.rolls.find(rollObject => {
-                    return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
-                });
-                if (randomObject != undefined) {
-                    return randomObject;
-                } else {
-                    throw new Error("Roll " + randomNumber + " not found for tier " + tier)
-                }
+    valueForMediumProgress(apl) {
+        if (Number.isInteger(apl)) {
+            var valueObject = treasureValuePerEncounterFile.find(valueObject => valueObject.apl == apl);
+            if (valueObject != undefined) {
+                return valueObject.medium * treasureBudgetModifier;
             } else {
-                throw new Error("Table not found for tier " + tier)
+                throw new Error("No budget found for APL " + apl);
             }
+        } else {
+            throw new Error("APL is not a number");
+        }
+    },
+    valueForFastProgress(apl) {
+        if (Number.isInteger(apl)) {
+            var valueObject = treasureValuePerEncounterFile.find(valueObject => valueObject.apl == apl);
+            if (valueObject != undefined) {
+                return valueObject.fast * treasureBudgetModifier;
+            } else {
+                throw new Error("No budget found for APL " + apl);
+            }
+        } else {
+            throw new Error("APL is not a number");
         }
     }
+};
+
+const armorShield = {
+    toHtml() {
+        // Title and description
+        var catDiv = $(document.createElement('div'));
+        catDiv.addClass('row');
+        var catCol = $(document.createElement('div'));
+        catDiv.addClass('col');
+        catDiv.append(catCol);
+        var catTitleDiv = $(document.createElement('div'));
+        catTitleDiv.addClass('row')
+        var catTitle = $(document.createElement('h1'));
+        catTitle.text(armorShieldFile.title);
+        catTitleDiv.append(catTitle)
+        var catDescDiv = $(document.createElement('div'));
+        catDescDiv.addClass('row')
+        var catDesc = $(document.createElement('p'));
+        catDesc.text(armorShieldFile.description);
+        catDescDiv.append(catDesc)
+
+        var catTablesDiv = $(document.createElement('div'));
+        catTablesDiv.addClass('row')
+        var catTablesCol = $(document.createElement('div'));
+        catTablesCol.addClass('col')
+        catTablesDiv.append(catTablesCol);
+        // Tables
+        armorShieldFile.tables.forEach(tableObject => {
+
+            var itemTable = new ItemTable(tableObject);
+            var tableHtml = itemTable.getHtml();
+
+            var randomDiv = $(document.createElement('div'));
+            randomDiv.addClass("row")
+            var randomButton = $(document.createElement('a'));
+            randomButton.addClass("btn");
+            randomButton.text("RANDOM")
+            var randomItemTable = new ItemTable();
+            var randomTable = randomItemTable.getHtml();
+            randomButton.on("click", event => {
+                var randomObject = this.roll();
+                if (randomObject != undefined) {
+                    randomItemTable.addItem(randomObject);
+                }
+            });
+            randomDiv.append(randomButton)
+            randomDiv.append(randomTable)
+
+            catTablesCol.append(tableHtml);
+            catTablesCol.append(randomDiv);
+        });
 
 
+        catCol.append(catTitleDiv);
+        catCol.append(catDescDiv);
+        catCol.append(catTablesDiv);
+
+        return catDiv;
+    },
+
+    roll() {
+        var table = armorShieldFile.tables[0];
+        if (table != undefined) {
+            const randomNumber = roll100();
+            var randomObject = table.find(rollObject => {
+                return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
+            });
+            if (randomObject != undefined) {
+                return randomObject;
+            } else {
+                throw new Error("Roll " + randomNumber + " not found")
+            }
+        } else {
+            throw new Error("Table not found for level " + level)
+        }
+    }
+}
+
+const compounds = {
+    toHtml: function () {
+
+        // Title and description
+        var compoundsDiv = $(document.createElement('div'));
+        compoundsDiv.addClass('row');
+        var compoundsCol = $(document.createElement('div'));
+        compoundsDiv.addClass('col');
+        compoundsDiv.append(compoundsCol);
+        var compoundsTitleDiv = $(document.createElement('div'));
+        compoundsTitleDiv.addClass('row')
+        var compoundsTitle = $(document.createElement('h1'));
+        compoundsTitle.text(compoundsFile.title);
+        compoundsTitleDiv.append(compoundsTitle)
+        var compoundsDescDiv = $(document.createElement('div'));
+        compoundsDescDiv.addClass('row')
+        var compoundsDesc = $(document.createElement('p'));
+        compoundsDesc.text(compoundsFile.description);
+        compoundsDescDiv.append(compoundsDesc)
+
+        var compoundsTablesDiv = $(document.createElement('div'));
+        compoundsTablesDiv.addClass('row')
+        var compoundsTablesCol = $(document.createElement('div'));
+        compoundsTablesCol.addClass('col')
+        compoundsTablesDiv.append(compoundsTablesCol);
+        // Tables
+        compoundsFile.tables.forEach(tableObject => {
+            var tableTitle = $(document.createElement('h4'));
+            tableTitle.text("Tier " + tableObject.tier + " Min:" + tableObject.minLevel + " Max:" + tableObject.maxLevel);
+            compoundsTablesCol.append(tableTitle);
+
+            var itemTable = new ItemTable(tableObject.rolls);
+            var tableHtml = itemTable.getHtml();
+
+            var randomDiv = $(document.createElement('div'));
+            randomDiv.addClass("row")
+            var randomButton = $(document.createElement('a'));
+            randomButton.addClass("btn");
+            randomButton.text("RANDOM")
+            var randomItemTable = new ItemTable();
+            var randomTable = randomItemTable.getHtml();
+            randomButton.on("click", event => {
+                var randomObject = this.rollForTier(tableObject.tier);
+                if (randomObject != undefined) {
+                    randomItemTable.addItem(randomObject);
+                }
+            });
+            randomDiv.append(randomButton)
+            randomDiv.append(randomTable)
+
+            compoundsTablesCol.append(tableHtml);
+            compoundsTablesCol.append(randomDiv);
+        });
+
+
+        compoundsCol.append(compoundsTitleDiv);
+        compoundsCol.append(compoundsDescDiv);
+        compoundsCol.append(compoundsTablesDiv);
+
+        return compoundsDiv;
+    },
+
+    rollForLevel: function (level) {
+        var table = compoundsFile.tables.find(tableObject => (tableObject.minLevel >= level && tableObject <= level));
+        if (table != undefined) {
+            const randomNumber = roll100();
+            var randomObject = table.rolls.find(rollObject => {
+                return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
+            });
+            if (randomObject != undefined) {
+                return randomObject;
+            } else {
+                throw new Error("Roll " + randomNumber + " not found for level " + level + " in table tier " + tableObject.tier)
+            }
+        } else {
+            throw new Error("Table not found for level " + level)
+        }
+    },
+
+    rollForTier: function (tier) {
+        var table = compoundsFile.tables.find(tableObject => (tableObject.tier == tier));
+        if (table != undefined) {
+            const randomNumber = roll100();
+            var randomObject = table.rolls.find(rollObject => {
+                return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
+            });
+            if (randomObject != undefined) {
+                return randomObject;
+            } else {
+                throw new Error("Roll " + randomNumber + " not found for tier " + tier)
+            }
+        } else {
+            throw new Error("Table not found for tier " + tier)
+        }
+    }
+};
+
+$(() => {
+
+    console.log(JSON.stringify(armorShieldFile));
+    var contentDiv = $("#mainContentCol");
+
+
+    contentDiv.append(armorShield.toHtml())
     contentDiv.append(compounds.toHtml())
 })

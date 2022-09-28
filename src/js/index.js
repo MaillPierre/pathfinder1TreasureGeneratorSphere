@@ -3,21 +3,9 @@ import * as EventEmitter from 'events';
 
 import compoundsFile from "../../data/compounds.json";// assert { type: `json` };
 
-function rollObjectToHtml(rollObject) {
-    var rollObjectText = $(document.createElement('p'));
-    var itemLink = $(document.createElement('a'));
-    itemLink.prop("href", rollObject.url);
-    rollObjectText.append(rollObject.minPercent + "-" + rollObject.maxPercent + "% ");
-    itemLink.text(rollObject.item)
-    rollObjectText.append(itemLink)
-    rollObjectText.append(" Price:" + rollObject.marketPrice)
-
-    return rollObjectText;
-}
-
 function roll(intMax) {
 
-    return Math.floor(Math.random() * intMax) +1 ;
+    return Math.floor(Math.random() * intMax) + 1;
 }
 
 function roll4() {
@@ -46,6 +34,72 @@ function roll20() {
 
 function roll100() {
     return roll(100);
+}
+
+class ItemTable {
+
+    constructor(itemArray) {
+        this.tableDiv =  $(document.createElement('table'));
+        this.tableDiv.addClass("table")
+        var tableHeader = $(document.createElement('thead'));
+        this.tableDiv.append(tableHeader);
+        var tableHeaderLine = $(document.createElement('tr'));
+        tableHeader.append(tableHeaderLine);
+        var tableHeaderPercentCell = $(document.createElement('th'));
+        tableHeaderPercentCell.attr("scope", "col");
+        tableHeaderPercentCell.append("Roll");
+        tableHeaderLine.append(tableHeaderPercentCell);
+        var tableHeaderItemCell = $(document.createElement('th'));
+        tableHeaderItemCell.attr("scope", "col");
+        tableHeaderItemCell.append("Item")
+        tableHeaderLine.append(tableHeaderItemCell);
+        var tableHeaderPriceCell = $(document.createElement('th'));
+        tableHeaderPriceCell.attr("scope", "col");
+        tableHeaderPriceCell.append("Price")
+        tableHeaderLine.append(tableHeaderPriceCell);
+        this.tableBody = $(document.createElement('tbody'));
+        this.tableDiv.append(this.tableBody)
+
+        if(itemArray != undefined) {
+            itemArray.forEach(rollObject => {
+                this.addItem(rollObject);
+    
+            });
+        }
+    }
+
+    getHtml() {
+        return this.tableDiv;
+    }
+
+    addItem(rollObject) {
+        var rollObjectLine = this.convertRollObjectToTableLine(rollObject);
+        this.tableBody.append(rollObjectLine);
+    }
+
+
+    convertRollObjectToTableLine = function (rollObject) {
+        var rollObjectTr = $(document.createElement('tr'));
+        var rollObjectPercentsTd = $(document.createElement('td'));
+        var rollObjectLinkTd = $(document.createElement('td'));
+        var rollObjectPriceTd = $(document.createElement('td'));
+        var itemLink = $(document.createElement('a'));
+        itemLink.prop("href", rollObject.url);
+        itemLink.text(rollObject.item)
+        if (rollObject.minPercent != rollObject.maxPercent) {
+            rollObjectPercentsTd.append(rollObject.minPercent + "-" + rollObject.maxPercent);
+        } else {
+            rollObjectPercentsTd.append(rollObject.minPercent);
+        }
+        rollObjectLinkTd.append(itemLink);
+        rollObjectPriceTd.append(rollObject.marketPrice + " po");
+
+        rollObjectTr.append(rollObjectPercentsTd);
+        rollObjectTr.append(rollObjectLinkTd);
+        rollObjectTr.append(rollObjectPriceTd);
+
+        return rollObjectTr;
+    }
 }
 
 $(() => {
@@ -84,33 +138,26 @@ $(() => {
                 tableTitle.text("Tier " + tableObject.tier + " Min:" + tableObject.minLevel + " Max:" + tableObject.maxLevel);
                 compoundsTablesCol.append(tableTitle);
 
-                var tableList = $(document.createElement('ul'));
-                tableObject.rolls.forEach(rollObject => {
-                    console.log(rollObject)
-                    var tableListItem = $(document.createElement('li'));
-
-                    var rollObjectText = rollObjectToHtml(rollObject);
-
-                    tableListItem.append(rollObjectText)
-                    tableList.append(tableListItem);
-                });
+                var itemTable = new ItemTable(tableObject.rolls);
+                var tableHtml = itemTable.getHtml();
 
                 var randomDiv = $(document.createElement('div'));
                 randomDiv.addClass("row")
                 var randomButton = $(document.createElement('a'));
                 randomButton.addClass("btn");
                 randomButton.text("RANDOM")
-                var randomText = $(document.createElement('p'));
+                var randomItemTable = new ItemTable();
+                var randomTable = randomItemTable.getHtml();
                 randomButton.on("click", event => {
                     var randomObject = this.rollForTier(tableObject.tier);
                     if (randomObject != undefined) {
-                        randomText.append(rollObjectToHtml(randomObject));
+                        randomItemTable.addItem(randomObject);
                     }
                 });
                 randomDiv.append(randomButton)
-                randomDiv.append(randomText)
+                randomDiv.append(randomTable)
 
-                compoundsTablesCol.append(tableList);
+                compoundsTablesCol.append(tableHtml);
                 compoundsTablesCol.append(randomDiv);
             });
 

@@ -1,0 +1,22 @@
+[
+    { "apl":1, "slow":170, "medium":260, "fast":400},
+    { "apl":2, "slow":350, "medium":550, "fast":800},
+    { "apl":3, "slow":550, "medium":800, "fast":1200},
+    { "apl":4, "slow":750, "medium":1150, "fast":1700},
+    { "apl":5, "slow":1000, "medium":1550, "fast":2300},
+    { "apl":6, "slow":1350, "medium":2000, "fast":3000},
+    { "apl":7, "slow":1750, "medium":2600, "fast":3900},
+    { "apl":8, "slow":2200, "medium":3350, "fast":5000},
+    { "apl":9, "slow":2850, "medium":4250, "fast":6400},
+    { "apl":10, "slow":3650, "medium":5450, "fast":8200},
+    { "apl":11, "slow":4650, "medium":7000, "fast":10500},
+    { "apl":12, "slow":6000, "medium":9000, "fast":13500},
+    { "apl":13, "slow":7750, "medium":11600, "fast":17500},
+    { "apl":14, "slow":10000, "medium":15000, "fast":22000},
+    { "apl":15, "slow":13000, "medium":19500, "fast":29000},
+    { "apl":16, "slow":16500, "medium":25000, "fast":38000},
+    { "apl":17, "slow":22000, "medium":32000, "fast":48000},
+    { "apl":18, "slow":28000, "medium":41000, "fast":62000},
+    { "apl":19, "slow":35000, "medium":53000, "fast":79000},
+    { "apl":20, "slow":44000, "medium":67000, "fast":100000}
+]

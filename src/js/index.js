@@ -14,8 +14,27 @@ const treasureBudgetModifier = new Map([
 var defaultTreasureBudgetModifier = treasureBudgetModifier.get("Standard");
 
 function roll(intMax) {
-
     return Math.floor(Math.random() * intMax) + 1;
+}
+
+function rollDice(rollString) {
+    const rollStringCleaned = rollString.trim().toLowerCase();
+    const theD = rollStringCleaned.lastIndexOf("d");
+    var result = [];
+    if(theD > -1) {
+        var numberOfDice = Number.parseInt(rollStringCleaned.substring(0, theD)); 
+        console.log(rollStringCleaned.substring(0, theD))
+        var diceNumber = Number.parseInt(rollStringCleaned.substring(theD+1)); 
+        console.log(rollStringCleaned.substring(theD))
+        console.log(numberOfDice)
+        console.log(diceNumber)
+        for(var i = 0; i < numberOfDice; i++) {
+            result.push(roll(diceNumber));
+        }
+    } else {
+        throw new Error("Dice roll format unknown " + rollString);
+    }
+    return result;
 }
 
 function roll4() {
@@ -330,6 +349,10 @@ $(() => {
     console.log(JSON.stringify(armorShieldFile));
     var contentDiv = $("#mainContentCol");
 
+    console.log(rollDice("1d6"));
+    
+    console.log(rollDice("16D2"));
+    console.log(rollDice("6d12"));
 
     contentDiv.append(armorShield.toHtml())
     contentDiv.append(compounds.toHtml())

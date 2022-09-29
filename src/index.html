@@ -30,7 +30,7 @@
                 <h1>Loot Generator for Pathfinder 1, with Spheres of Power</h1>
             </div>
             <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                     <label class="form-label" for="aplField">Average Player level:</label>
                     <select id="aplField">
                         <option value="1" selected>1</option>
@@ -55,14 +55,16 @@
                         <option value="20">20</option>
                     </select>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
                     <label class="form-label" for="budgetModifierSelect">Budget modifier:</label>
                     <select id="budgetModifierSelect">
-                        <option value="Incidental">Incidental</option>
-                        <option value="Standard" selected>Standard</option>
-                        <option value="Double">Double</option>
-                        <option value="Triple">Triple</option>
+                        <option value="0.5">Incidental</option>
+                        <option value="1" selected>Standard</option>
+                        <option value="2">Double</option>
+                        <option value="3">Triple</option>
                     </select>
+                </div>
+                <div class="col-4" id="budget">
                 </div>
             </div>
         </div>

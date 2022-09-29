@@ -5,64 +5,34 @@ import compoundsFile from "../../data/compounds.json";
 import treasureValuePerEncounterFile from "../../data/treasureValuePerEncounter.json";
 import armorShieldFile from "../../data/armorShield.json";
 
-const treasureBudgetModifier = new Map([
-    ["Incidental", 0.5],
-    ["Standard", 1],
-    ["Double", 2],
-    ["Triple", 3]
-]);
-var defaultTreasureBudgetModifier = treasureBudgetModifier.get("Standard");
-
-function roll(intMax) {
-    return Math.floor(Math.random() * intMax) + 1;
-}
-
-function rollDice(rollString) {
-    const rollStringCleaned = rollString.trim().toLowerCase();
-    const theD = rollStringCleaned.lastIndexOf("d");
-    var result = [];
-    if(theD > -1) {
-        var numberOfDice = Number.parseInt(rollStringCleaned.substring(0, theD)); 
-        console.log(rollStringCleaned.substring(0, theD))
-        var diceNumber = Number.parseInt(rollStringCleaned.substring(theD+1)); 
-        console.log(rollStringCleaned.substring(theD))
-        console.log(numberOfDice)
-        console.log(diceNumber)
-        for(var i = 0; i < numberOfDice; i++) {
-            result.push(roll(diceNumber));
+const dices = {
+    roll: function(intMax) {
+        return Math.floor(Math.random() * intMax) + 1;
+    },
+    
+    rollDice: function(rollString) {
+        const rollStringCleaned = rollString.trim().toLowerCase();
+        const theD = rollStringCleaned.lastIndexOf("d");
+        var result = [];
+        if(theD > -1) {
+            var numberOfDice = Number.parseInt(rollStringCleaned.substring(0, theD)); 
+            console.log(rollStringCleaned.substring(0, theD))
+            var diceNumber = Number.parseInt(rollStringCleaned.substring(theD+1)); 
+            console.log(rollStringCleaned.substring(theD))
+            console.log(numberOfDice)
+            console.log(diceNumber)
+            for(var i = 0; i < numberOfDice; i++) {
+                result.push(roll(diceNumber));
+            }
+        } else {
+            throw new Error("Dice roll format unknown " + rollString);
         }
-    } else {
-        throw new Error("Dice roll format unknown " + rollString);
+        return result;
+    },
+    
+    roll100: function() {
+        return roll(100);
     }
-    return result;
-}
-
-function roll4() {
-    return roll(4);
-}
-
-function roll6() {
-    return roll(6);
-}
-
-function roll8() {
-    return roll(8);
-}
-
-function roll10() {
-    return roll(10);
-}
-
-function roll12() {
-    return roll(12);
-}
-
-function roll20() {
-    return roll(20);
-}
-
-function roll100() {
-    return roll(100);
 }
 
 class ItemTable {
@@ -132,7 +102,7 @@ class ItemTable {
 }
 
 const treasureValuePerEncounter = {
-    valueForSlowProgress(apl) {
+    valueForSlowProgress(apl, treasureBudgetModifier = 1) {
         if (Number.isInteger(apl)) {
             var valueObject = treasureValuePerEncounterFile.find(valueObject => valueObject.apl == apl);
             if (valueObject != undefined) {
@@ -145,7 +115,7 @@ const treasureValuePerEncounter = {
         }
     },
 
-    valueForMediumProgress(apl) {
+    valueForMediumProgress(apl, treasureBudgetModifier = 1) {
         if (Number.isInteger(apl)) {
             var valueObject = treasureValuePerEncounterFile.find(valueObject => valueObject.apl == apl);
             if (valueObject != undefined) {
@@ -157,7 +127,7 @@ const treasureValuePerEncounter = {
             throw new Error("APL is not a number");
         }
     },
-    valueForFastProgress(apl) {
+    valueForFastProgress(apl, treasureBudgetModifier = 1) {
         if (Number.isInteger(apl)) {
             var valueObject = treasureValuePerEncounterFile.find(valueObject => valueObject.apl == apl);
             if (valueObject != undefined) {
@@ -232,7 +202,7 @@ const armorShield = {
     roll() {
         var table = armorShieldFile.tables[0];
         if (table != undefined) {
-            const randomNumber = roll100();
+            const randomNumber = dices.roll100();
             var randomObject = table.find(rollObject => {
                 return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
             });
@@ -312,7 +282,7 @@ const compounds = {
     rollForLevel: function (level) {
         var table = compoundsFile.tables.find(tableObject => (tableObject.minLevel >= level && tableObject <= level));
         if (table != undefined) {
-            const randomNumber = roll100();
+            const randomNumber = dices.roll100();
             var randomObject = table.rolls.find(rollObject => {
                 return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
             });
@@ -329,7 +299,7 @@ const compounds = {
     rollForTier: function (tier) {
         var table = compoundsFile.tables.find(tableObject => (tableObject.tier == tier));
         if (table != undefined) {
-            const randomNumber = roll100();
+            const randomNumber = dices.roll100();
             var randomObject = table.rolls.find(rollObject => {
                 return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
             });
@@ -349,10 +319,30 @@ $(() => {
     console.log(JSON.stringify(armorShieldFile));
     var contentDiv = $("#mainContentCol");
 
-    console.log(rollDice("1d6"));
-    
-    console.log(rollDice("16D2"));
-    console.log(rollDice("6d12"));
+    var treasureBudgetModifier = Number.parseFloat($("#budgetModifierSelect").val());
+    var apl = Number.parseInt($("#aplField").val());
+    var budgetSlow = treasureValuePerEncounter.valueForSlowProgress(apl, treasureBudgetModifier);
+    var budgetMedium = treasureValuePerEncounter.valueForMediumProgress(apl, treasureBudgetModifier);
+    var budgetFast = treasureValuePerEncounter.valueForFastProgress(apl, treasureBudgetModifier);
+    $("#budget").empty();
+    $("#budget").append("Slow: ", budgetSlow, " Medium: ", budgetMedium, " Fast: ", budgetFast);
+    $("#aplField").on("change", () => {
+        var apl = Number.parseInt($("#aplField").val());
+        budgetSlow = treasureValuePerEncounter.valueForSlowProgress(apl, treasureBudgetModifier);
+        budgetMedium = treasureValuePerEncounter.valueForMediumProgress(apl, treasureBudgetModifier);
+        budgetFast = treasureValuePerEncounter.valueForFastProgress(apl, treasureBudgetModifier);
+        $("#budget").empty();
+        $("#budget").append("Slow: ", budgetSlow, " Medium: ", budgetMedium, " Fast: ", budgetFast);
+    })
+    $("#budgetModifierSelect").on("change", () => {
+        var apl = Number.parseInt($("#aplField").val());
+        treasureBudgetModifier = Number.parseFloat($("#budgetModifierSelect").val());
+        budgetSlow = treasureValuePerEncounter.valueForSlowProgress(apl, treasureBudgetModifier);
+        budgetMedium = treasureValuePerEncounter.valueForMediumProgress(apl, treasureBudgetModifier);
+        budgetFast = treasureValuePerEncounter.valueForFastProgress(apl, treasureBudgetModifier);
+        $("#budget").empty();
+        $("#budget").append("Slow: ", budgetSlow, " Medium: ", budgetMedium, " Fast: ", budgetFast);
+    })
 
     contentDiv.append(armorShield.toHtml())
     contentDiv.append(compounds.toHtml())

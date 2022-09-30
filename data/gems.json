@@ -1,0 +1,437 @@
+{
+    "title": "Gems",
+    "description": "When randomly determining gems, roll on the appropriate grade chart. To determine the gemstone’s total value, roll the added value and add it to the base value. If you would prefer the average value instead, simply double the base value. In addition, if the roll to determine the type of gem is an odd roll, the gem is unworked, which means its value is equal to half the total value of a normal gem of that type, but it can made into a worked gem with a successful Craft (jewelry) check of the appropriate DC based on the gem’s grade (the gem counts as the raw material cost, so the crafter need not pay that amount). On an even roll, the gem is worked, can’t be improved upon, and is worth the listed cost.",
+    "source": "http://spheresofpower.wikidot.com/loot-tables#toc6",
+    "tables": [
+        {
+            "grade": "1",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 8,
+                    "item": "Agate",
+                    "url": "",
+                    "baseValue": 5,
+                    "addedValue": "2d4"
+                },
+                {
+                    "minPercent": 9,
+                    "maxPercent": 14,
+                    "item": "Alabaster",
+                    "url": "",
+                    "baseValue": 5,
+                    "addedValue": "2d4"
+                },
+                {
+                    "minPercent": 15,
+                    "maxPercent": 20,
+                    "item": "Azurite",
+                    "url": "",
+                    "baseValue": 5,
+                    "addedValue": "2d4"
+                },
+                {
+                    "minPercent": 21,
+                    "maxPercent": 26,
+                    "item": "Hematite",
+                    "url": "",
+                    "baseValue": 5,
+                    "addedValue": "2d4"
+                },
+                {
+                    "minPercent": 27,
+                    "maxPercent": 34,
+                    "item": "Lapis Lazuli",
+                    "url": "",
+                    "baseValue": 5,
+                    "addedValue": "2d4"
+                },
+                {
+                    "minPercent": 35,
+                    "maxPercent": 40,
+                    "item": "Malachite",
+                    "url": "",
+                    "baseValue": 5,
+                    "addedValue": "2d4"
+                },
+                {
+                    "minPercent": 41,
+                    "maxPercent": 48,
+                    "item": "Obsidian",
+                    "url": "",
+                    "baseValue": 5,
+                    "addedValue": "2d4"
+                },
+                {
+                    "minPercent": 49,
+                    "maxPercent": 56,
+                    "item": "Irregular freshwater pearl",
+                    "url": "",
+                    "baseValue": 5,
+                    "addedValue": "2d4"
+                },
+                {
+                    "minPercent": 57,
+                    "maxPercent": 62,
+                    "item": "Pyrite",
+                    "url": "",
+                    "baseValue": 5,
+                    "addedValue": "2d4"
+                },
+                {
+                    "minPercent": 63,
+                    "maxPercent": 70,
+                    "item": "Rodochrosite",
+                    "url": "",
+                    "baseValue": 5,
+                    "addedValue": "2d4"
+                },
+                {
+                    "minPercent": 71,
+                    "maxPercent": 78,
+                    "item": "Rock crystal Quartz",
+                    "url": "",
+                    "baseValue": 5,
+                    "addedValue": "2d4"
+                },
+                {
+                    "minPercent": 79,
+                    "maxPercent": 84,
+                    "item": "Shell",
+                    "url": "",
+                    "baseValue": 5,
+                    "addedValue": "2d4"
+                },
+                {
+                    "minPercent": 85,
+                    "maxPercent": 92,
+                    "item": "Tigereye",
+                    "url": "",
+                    "baseValue": 5,
+                    "addedValue": "2d4"
+                },
+                {
+                    "minPercent": 93,
+                    "maxPercent": 100,
+                    "item": "Tigereye",
+                    "url": "",
+                    "baseValue": 5,
+                    "addedValue": "2d4"
+                },
+            ]
+        },
+        {
+            "grade": "2",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 6,
+                    "item": "Bloodstone",
+                    "url": "",
+                    "baseValue": 25,
+                    "addedValue": "2d4 x 5"
+                },
+                {
+                    "minPercent": 7,
+                    "maxPercent": 12,
+                    "item": "Carnelian",
+                    "url": "",
+                    "baseValue": 25,
+                    "addedValue": "2d4 x 5"
+                },
+                {
+                    "minPercent": 13,
+                    "maxPercent": 18,
+                    "item": "Chrysoprase",
+                    "url": "",
+                    "baseValue": 25,
+                    "addedValue": "2d4 x 5"
+                },
+                {
+                    "minPercent": 19,
+                    "maxPercent": 24,
+                    "item": "Citrine",
+                    "url": "",
+                    "baseValue": 25,
+                    "addedValue": "2d4 x 5"
+                },
+                {
+                    "minPercent": 25,
+                    "maxPercent": 32,
+                    "item": "Ivory",
+                    "url": "",
+                    "baseValue": 25,
+                    "addedValue": "2d4 x 5"
+                },
+                {
+                    "minPercent": 33,
+                    "maxPercent": 38,
+                    "item": "Jasper",
+                    "url": "",
+                    "baseValue": 25,
+                    "addedValue": "2d4 x 5"
+                },
+                {
+                    "minPercent": 39,
+                    "maxPercent": 44,
+                    "item": "Moonstone",
+                    "url": "",
+                    "baseValue": 25,
+                    "addedValue": "2d4 x 5"
+                },
+                {
+                    "minPercent": 45,
+                    "maxPercent": 50,
+                    "item": "Onyx",
+                    "url": "",
+                    "baseValue": 25,
+                    "addedValue": "2d4 x 5"
+                },
+                {
+                    "minPercent": 51,
+                    "maxPercent": 56,
+                    "item": "Peridot",
+                    "url": "",
+                    "baseValue": 25,
+                    "addedValue": "2d4 x 5"
+                },
+                {
+                    "minPercent": 57,
+                    "maxPercent": 74,
+                    "item": "Quartz, milky, rose, or smoky",
+                    "url": "",
+                    "baseValue": 25,
+                    "addedValue": "2d4 x 5"
+                },
+                {
+                    "minPercent": 75,
+                    "maxPercent": 80,
+                    "item": "Sard",
+                    "url": "",
+                    "baseValue": 25,
+                    "addedValue": "2d4 x 5"
+                },
+                {
+                    "minPercent": 81,
+                    "maxPercent": 86,
+                    "item": "Sardonyx",
+                    "url": "",
+                    "baseValue": 25,
+                    "addedValue": "2d4 x 5"
+                },
+                {
+                    "minPercent": 87,
+                    "maxPercent": 92,
+                    "item": "Red or green spinel",
+                    "url": "",
+                    "baseValue": 25,
+                    "addedValue": "2d4 x 5"
+                },
+                {
+                    "minPercent": 93,
+                    "maxPercent": 100,
+                    "item": "Zircon",
+                    "url": "",
+                    "baseValue": 25,
+                    "addedValue": "2d4 x 5"
+                }
+            ]
+        },
+        {
+            "grade": "3",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 10,
+                    "item": "Amber",
+                    "url": "",
+                    "baseValue": 50,
+                    "addedValue": "2d4 x 10"
+                },
+                {
+                    "minPercent": 11,
+                    "maxPercent": 20,
+                    "item": "Amethyst",
+                    "url": "",
+                    "baseValue": 50,
+                    "addedValue": "2d4 x 10"
+                },
+                {
+                    "minPercent": 21,
+                    "maxPercent": 30,
+                    "item": "Chrysoberyl",
+                    "url": "",
+                    "baseValue": 50,
+                    "addedValue": "2d4 x 10"
+                },
+                {
+                    "minPercent": 31,
+                    "maxPercent": 40,
+                    "item": "Coral",
+                    "url": "",
+                    "baseValue": 50,
+                    "addedValue": "2d4 x 10"
+                },
+                {
+                    "minPercent": 41,
+                    "maxPercent": 50,
+                    "item": "Garnet",
+                    "url": "",
+                    "baseValue": 50,
+                    "addedValue": "2d4 x 10"
+                },
+                {
+                    "minPercent": 51,
+                    "maxPercent": 60,
+                    "item": "Jade",
+                    "url": "",
+                    "baseValue": 50,
+                    "addedValue": "2d4 x 10"
+                },
+                {
+                    "minPercent": 61,
+                    "maxPercent": 70,
+                    "item": "Jet",
+                    "url": "",
+                    "baseValue": 50,
+                    "addedValue": "2d4 x 10"
+                },
+                {
+                    "minPercent": 71,
+                    "maxPercent": 80,
+                    "item": "Saltwater pearl",
+                    "url": "",
+                    "baseValue": 50,
+                    "addedValue": "2d4 x 10"
+                },
+                {
+                    "minPercent": 81,
+                    "maxPercent": 90,
+                    "item": "Deep blue spinel",
+                    "url": "",
+                    "baseValue": 50,
+                    "addedValue": "2d4 x 10"
+                },
+                {
+                    "minPercent": 91,
+                    "maxPercent": 100,
+                    "item": "Tourmaline",
+                    "url": "",
+                    "baseValue": 50,
+                    "addedValue": "2d4 x 10"
+                }
+            ]
+        },
+        {
+            "grade": "4",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 25,
+                    "item": "Aquamarine",
+                    "url": "",
+                    "baseValue": 250,
+                    "addedValue": "2d4 x 50"
+                },
+                {
+                    "minPercent": 26,
+                    "maxPercent": 50,
+                    "item": "Opal",
+                    "url": "",
+                    "baseValue": 250,
+                    "addedValue": "2d4 x 50"
+                },
+                {
+                    "minPercent": 51,
+                    "maxPercent": 75,
+                    "item": "Black pearl",
+                    "url": "",
+                    "baseValue": 250,
+                    "addedValue": "2d4 x 50"
+                },
+                {
+                    "minPercent": 76,
+                    "maxPercent": 100,
+                    "item": "Topaz",
+                    "url": "",
+                    "baseValue": 250,
+                    "addedValue": "2d4 x 50"
+                }
+            ]
+        },
+        {
+            "grade": "5",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 25,
+                    "item": "Small diamond",
+                    "url": "",
+                    "baseValue": 500,
+                    "addedValue": "2d4 x 100"
+                },
+                {
+                    "minPercent": 26,
+                    "maxPercent": 50,
+                    "item": "Emerald",
+                    "url": "",
+                    "baseValue": 500,
+                    "addedValue": "2d4 x 100"
+                },
+                {
+                    "minPercent": 51,
+                    "maxPercent": 75,
+                    "item": "Small ruby",
+                    "url": "",
+                    "baseValue": 500,
+                    "addedValue": "2d4 x 100"
+                },
+                {
+                    "minPercent": 76,
+                    "maxPercent": 100,
+                    "item": "Sapphire",
+                    "url": "",
+                    "baseValue": 500,
+                    "addedValue": "2d4 x 100"
+                }
+            ]
+        },
+        {
+            "grade": "6",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 25,
+                    "item": "Large diamond",
+                    "url": "",
+                    "baseValue": 2500,
+                    "addedValue": "2d4 x 500"
+                },
+                {
+                    "minPercent": 26,
+                    "maxPercent": 50,
+                    "item": "Brilliant green emerald",
+                    "url": "",
+                    "baseValue": 2500,
+                    "addedValue": "2d4 x 500"
+                },
+                {
+                    "minPercent": 51,
+                    "maxPercent": 75,
+                    "item": "Large ruby",
+                    "url": "",
+                    "baseValue": 2500,
+                    "addedValue": "2d4 x 500"
+                },
+                {
+                    "minPercent": 76,
+                    "maxPercent": 100,
+                    "item": "Star sapphire",
+                    "url": "",
+                    "baseValue": 2500,
+                    "addedValue": "2d4 x 500"
+                }
+            ]
+        }
+    ]
+}

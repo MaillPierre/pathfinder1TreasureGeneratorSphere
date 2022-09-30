@@ -2,36 +2,56 @@ import $ from 'jquery';
 import * as EventEmitter from 'events';
 
 import compoundsFile from "../../data/compounds.json";
+import gemsFile from "../../data/gems.json";
 import treasureValuePerEncounterFile from "../../data/treasureValuePerEncounter.json";
 import armorShieldFile from "../../data/armorShield.json";
 
 const dices = {
-    roll: function(intMax) {
+    roll: function (intMax) {
         return Math.floor(Math.random() * intMax) + 1;
     },
-    
-    rollDice: function(rollString) {
-        const rollStringCleaned = rollString.trim().toLowerCase();
-        const theD = rollStringCleaned.lastIndexOf("d");
-        var result = [];
-        if(theD > -1) {
-            var numberOfDice = Number.parseInt(rollStringCleaned.substring(0, theD)); 
-            console.log(rollStringCleaned.substring(0, theD))
-            var diceNumber = Number.parseInt(rollStringCleaned.substring(theD+1)); 
-            console.log(rollStringCleaned.substring(theD))
-            console.log(numberOfDice)
-            console.log(diceNumber)
-            for(var i = 0; i < numberOfDice; i++) {
-                result.push(roll(diceNumber));
+
+    rollDice: function (rollString) {
+        /* function to parse and calculate dice roll formulas.
+        *  like 3d6 + 2d10 = 3 rolls of 6 sided dice + 2 rolls of 10 sided
+        *  Return one number, or array of numbers if rolls > 1
+        *  By @BitOfGold
+        */
+        function roll(formula, rolls = 1) {
+            var rr = (t, s) => {
+                var v = 0;
+                for (var i = 1; i <= t; i++) {
+                    v += 1 + Math.floor(Math.random() * s);
+                }
+                return v;
+            };
+            var f = formula
+                .toLowerCase()
+                .replace(/x/g, "*")
+                .replace(/[^\+\-\*\/\(\)0-9\.d]/g, "")
+                .replace(/([0-9]+)d([0-9]+)/g, "rr($1,$2)")
+                .replace(/d([0-9]+)/g, "rr(1,$1)");
+            var ansl = [];
+            var ans = 0;
+            for (var ti = 1; ti <= rolls; ti++) {
+                try {
+                    eval("ans=" + f + ";");
+                } catch (e) {
+                    return false;
+                }
+                ansl[ansl.length] = ans;
             }
-        } else {
-            throw new Error("Dice roll format unknown " + rollString);
+            if (rolls < 2) {
+                return ans;
+            } else {
+                return ansl;
+            }
         }
-        return result;
+        return rollDice(rollString);
     },
-    
-    roll100: function() {
-        return roll(100);
+
+    roll100: function () {
+        return this.roll(100);
     }
 }
 
@@ -102,7 +122,27 @@ class ItemTable {
 }
 
 const treasureValuePerEncounter = {
-    valueForSlowProgress(apl, treasureBudgetModifier = 1) {
+    slowProgressName: "Slow",
+    mediumProgressName: "Medium",
+    fastProgressName: "Fast",
+
+    defaultTreasureBudgetModifier: 1,
+
+    valueForProgress(progressName, apl, treasureBudgetModifier = this.defaultTreasureBudgetModifier) {
+        var result = 0;
+        if (this.slowProgressName.localeCompare(progressName) == 0) {
+            result = this.valueForSlowProgress(apl, treasureBudgetModifier);
+        } else if (this.mediumProgressName.localeCompare(progressName) == 0) {
+            result = this.valueForMediumProgress(apl, treasureBudgetModifier);
+        } else if (this.fastProgressName.localeCompare(progressName) == 0) {
+            result = this.valueForFastProgress(apl, treasureBudgetModifier);
+        } else {
+            throw new Error(progressName + " unknow progress name");
+        }
+        return result;
+    },
+
+    valueForSlowProgress(apl, treasureBudgetModifier = this.defaultTreasureBudgetModifier) {
         if (Number.isInteger(apl)) {
             var valueObject = treasureValuePerEncounterFile.find(valueObject => valueObject.apl == apl);
             if (valueObject != undefined) {
@@ -115,7 +155,7 @@ const treasureValuePerEncounter = {
         }
     },
 
-    valueForMediumProgress(apl, treasureBudgetModifier = 1) {
+    valueForMediumProgress(apl, treasureBudgetModifier = this.defaultTreasureBudgetModifier) {
         if (Number.isInteger(apl)) {
             var valueObject = treasureValuePerEncounterFile.find(valueObject => valueObject.apl == apl);
             if (valueObject != undefined) {
@@ -127,7 +167,7 @@ const treasureValuePerEncounter = {
             throw new Error("APL is not a number");
         }
     },
-    valueForFastProgress(apl, treasureBudgetModifier = 1) {
+    valueForFastProgress(apl, treasureBudgetModifier = this.defaultTreasureBudgetModifier) {
         if (Number.isInteger(apl)) {
             var valueObject = treasureValuePerEncounterFile.find(valueObject => valueObject.apl == apl);
             if (valueObject != undefined) {
@@ -213,6 +253,38 @@ const armorShield = {
             }
         } else {
             throw new Error("Table not found for level " + level)
+        }
+    }
+}
+
+const money = {
+    roll(moneyRollObject = { pcRoll: "", paRoll: "", poRoll: "", ppRoll: "" }) {
+        var result = { pc: 0, pa: 0, po: 0, pp: 0 };
+
+        result.pc = dices.rollDice(moneyRollObject.pcRoll);
+        result.pa = dices.rollDice(moneyRollObject.paRoll);
+        result.po = dices.rollDice(moneyRollObject.poRoll);
+        result.pp = dices.rollDice(moneyRollObject.ppRoll);
+
+        return result;
+    }
+}
+
+const gem = {
+    rollForGrade(grade) {
+        var table = gemsFile.tables.find(tableObject => tableObject.grade == grade);
+        if (table != undefined) {
+            const randomNumber = dices.roll100();
+            var randomObject = table.rolls.find(rollObject => {
+                return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
+            });
+            if (randomObject != undefined) {
+                return randomObject;
+            } else {
+                throw new Error("Roll " + randomNumber + " not found for grade " + grade )
+            }
+        } else {
+            throw new Error("Table not found for grade " + grade)
         }
     }
 }
@@ -321,28 +393,41 @@ $(() => {
 
     var treasureBudgetModifier = Number.parseFloat($("#budgetModifierSelect").val());
     var apl = Number.parseInt($("#aplField").val());
-    var budgetSlow = treasureValuePerEncounter.valueForSlowProgress(apl, treasureBudgetModifier);
-    var budgetMedium = treasureValuePerEncounter.valueForMediumProgress(apl, treasureBudgetModifier);
-    var budgetFast = treasureValuePerEncounter.valueForFastProgress(apl, treasureBudgetModifier);
+    var progression = $("#budgetProgressionSelect").val();
+    var budget = treasureValuePerEncounter.valueForProgress(progression, apl, treasureBudgetModifier);
     $("#budget").empty();
-    $("#budget").append("Slow: ", budgetSlow, " Medium: ", budgetMedium, " Fast: ", budgetFast);
+    $("#budget").append(budget + "po");
     $("#aplField").on("change", () => {
         var apl = Number.parseInt($("#aplField").val());
-        budgetSlow = treasureValuePerEncounter.valueForSlowProgress(apl, treasureBudgetModifier);
-        budgetMedium = treasureValuePerEncounter.valueForMediumProgress(apl, treasureBudgetModifier);
-        budgetFast = treasureValuePerEncounter.valueForFastProgress(apl, treasureBudgetModifier);
+        var treasureBudgetModifier = Number.parseFloat($("#budgetModifierSelect").val());
+        var progression = $("#budgetProgressionSelect").val();
+        var budget = treasureValuePerEncounter.valueForProgress(progression, apl, treasureBudgetModifier);
         $("#budget").empty();
-        $("#budget").append("Slow: ", budgetSlow, " Medium: ", budgetMedium, " Fast: ", budgetFast);
+        $("#budget").append(budget + "po");
     })
     $("#budgetModifierSelect").on("change", () => {
         var apl = Number.parseInt($("#aplField").val());
-        treasureBudgetModifier = Number.parseFloat($("#budgetModifierSelect").val());
-        budgetSlow = treasureValuePerEncounter.valueForSlowProgress(apl, treasureBudgetModifier);
-        budgetMedium = treasureValuePerEncounter.valueForMediumProgress(apl, treasureBudgetModifier);
-        budgetFast = treasureValuePerEncounter.valueForFastProgress(apl, treasureBudgetModifier);
+        var treasureBudgetModifier = Number.parseFloat($("#budgetModifierSelect").val());
+        var progression = $("#budgetProgressionSelect").val();
+        var budget = treasureValuePerEncounter.valueForProgress(progression, apl, treasureBudgetModifier);
         $("#budget").empty();
-        $("#budget").append("Slow: ", budgetSlow, " Medium: ", budgetMedium, " Fast: ", budgetFast);
+        $("#budget").append(budget + "po");
     })
+    $("#budgetProgressionSelect").on("change", () => {
+        var apl = Number.parseInt($("#aplField").val());
+        var treasureBudgetModifier = Number.parseFloat($("#budgetModifierSelect").val());
+        var progression = $("#budgetProgressionSelect").val();
+        var budget = treasureValuePerEncounter.valueForProgress(progression, apl, treasureBudgetModifier);
+        $("#budget").empty();
+        $("#budget").append(budget + "po");
+    })
+
+    console.log(gem.rollForGrade(1))
+    console.log(gem.rollForGrade(2))
+    console.log(gem.rollForGrade(3))
+    console.log(gem.rollForGrade(4))
+    console.log(gem.rollForGrade(5))
+    console.log(gem.rollForGrade(6))
 
     contentDiv.append(armorShield.toHtml())
     contentDiv.append(compounds.toHtml())

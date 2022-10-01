@@ -6,18 +6,22 @@ import gemsFile from "../../data/gems.json";
 import treasureValuePerEncounterFile from "../../data/treasureValuePerEncounter.json";
 import armorShieldFile from "../../data/armorShield.json";
 
+import typeAFile from "../../data/typeA.json";
+import typeBFile from "../../data/typeB.json";
+
+
 const dices = {
     roll: function (intMax) {
         return Math.floor(Math.random() * intMax) + 1;
     },
 
-    rollDice: function (rollString) {
+    rollDiceFormula: function (rollString) {
         /* function to parse and calculate dice roll formulas.
         *  like 3d6 + 2d10 = 3 rolls of 6 sided dice + 2 rolls of 10 sided
         *  Return one number, or array of numbers if rolls > 1
         *  By @BitOfGold
         */
-        function roll(formula, rolls = 1) {
+        function rollDice(formula, rolls = 1) {
             var rr = (t, s) => {
                 var v = 0;
                 for (var i = 1; i <= t; i++) {
@@ -91,34 +95,11 @@ class ItemTable {
         return this.tableDiv;
     }
 
-    addItem(rollObject) {
-        var rollObjectLine = this.convertRollObjectToTableLine(rollObject);
+    addItem(rollObject, conversionFunction) {
+        var rollObjectLine = conversionFunction(rollObject);
         this.tableBody.append(rollObjectLine);
     }
 
-
-    convertRollObjectToTableLine = function (rollObject) {
-        var rollObjectTr = $(document.createElement('tr'));
-        var rollObjectPercentsTd = $(document.createElement('td'));
-        var rollObjectLinkTd = $(document.createElement('td'));
-        var rollObjectPriceTd = $(document.createElement('td'));
-        var itemLink = $(document.createElement('a'));
-        itemLink.prop("href", rollObject.url);
-        itemLink.text(rollObject.item)
-        if (rollObject.minPercent != rollObject.maxPercent) {
-            rollObjectPercentsTd.append(rollObject.minPercent + "-" + rollObject.maxPercent);
-        } else {
-            rollObjectPercentsTd.append(rollObject.minPercent);
-        }
-        rollObjectLinkTd.append(itemLink);
-        rollObjectPriceTd.append(rollObject.marketPrice + " po");
-
-        rollObjectTr.append(rollObjectPercentsTd);
-        rollObjectTr.append(rollObjectLinkTd);
-        rollObjectTr.append(rollObjectPriceTd);
-
-        return rollObjectTr;
-    }
 }
 
 const treasureValuePerEncounter = {
@@ -182,62 +163,6 @@ const treasureValuePerEncounter = {
 };
 
 const armorShield = {
-    toHtml() {
-        // Title and description
-        var catDiv = $(document.createElement('div'));
-        catDiv.addClass('row');
-        var catCol = $(document.createElement('div'));
-        catDiv.addClass('col');
-        catDiv.append(catCol);
-        var catTitleDiv = $(document.createElement('div'));
-        catTitleDiv.addClass('row')
-        var catTitle = $(document.createElement('h1'));
-        catTitle.text(armorShieldFile.title);
-        catTitleDiv.append(catTitle)
-        var catDescDiv = $(document.createElement('div'));
-        catDescDiv.addClass('row')
-        var catDesc = $(document.createElement('p'));
-        catDesc.text(armorShieldFile.description);
-        catDescDiv.append(catDesc)
-
-        var catTablesDiv = $(document.createElement('div'));
-        catTablesDiv.addClass('row')
-        var catTablesCol = $(document.createElement('div'));
-        catTablesCol.addClass('col')
-        catTablesDiv.append(catTablesCol);
-        // Tables
-        armorShieldFile.tables.forEach(tableObject => {
-
-            var itemTable = new ItemTable(tableObject);
-            var tableHtml = itemTable.getHtml();
-
-            var randomDiv = $(document.createElement('div'));
-            randomDiv.addClass("row")
-            var randomButton = $(document.createElement('a'));
-            randomButton.addClass("btn");
-            randomButton.text("RANDOM")
-            var randomItemTable = new ItemTable();
-            var randomTable = randomItemTable.getHtml();
-            randomButton.on("click", event => {
-                var randomObject = this.roll();
-                if (randomObject != undefined) {
-                    randomItemTable.addItem(randomObject);
-                }
-            });
-            randomDiv.append(randomButton)
-            randomDiv.append(randomTable)
-
-            catTablesCol.append(tableHtml);
-            catTablesCol.append(randomDiv);
-        });
-
-
-        catCol.append(catTitleDiv);
-        catCol.append(catDescDiv);
-        catCol.append(catTablesDiv);
-
-        return catDiv;
-    },
 
     roll() {
         var table = armorShieldFile.tables[0];
@@ -254,19 +179,83 @@ const armorShield = {
         } else {
             throw new Error("Table not found for level " + level)
         }
+    },
+
+    convertRollObjectToTableLine(rollObject) {
+        var rollObjectTr = $(document.createElement('tr'));
+        var rollObjectPercentsTd = $(document.createElement('td'));
+        var rollObjectLinkTd = $(document.createElement('td'));
+        var rollObjectPriceTd = $(document.createElement('td'));
+        var itemLink = $(document.createElement('a'));
+        itemLink.prop("href", rollObject.url);
+        itemLink.text(rollObject.item)
+        if (rollObject.minPercent != rollObject.maxPercent) {
+            rollObjectPercentsTd.append(rollObject.minPercent + "-" + rollObject.maxPercent);
+        } else {
+            rollObjectPercentsTd.append(rollObject.minPercent);
+        }
+        rollObjectLinkTd.append(itemLink);
+        rollObjectPriceTd.append(rollObject.marketPrice + " po");
+
+        rollObjectTr.append(rollObjectPercentsTd);
+        rollObjectTr.append(rollObjectLinkTd);
+        rollObjectTr.append(rollObjectPriceTd);
+
+        return rollObjectTr;
     }
 }
 
 const money = {
-    roll(moneyRollObject = { pcRoll: "", paRoll: "", poRoll: "", ppRoll: "" }) {
-        var result = { pc: 0, pa: 0, po: 0, pp: 0 };
+    roll(moneyRollObject = { cpRoll: "", spRoll: "", gpRoll: "", ppRoll: "" }) {
+        var result = { cp: 0, sp: 0, gp: 0, pp: 0 };
 
-        result.pc = dices.rollDice(moneyRollObject.pcRoll);
-        result.pa = dices.rollDice(moneyRollObject.paRoll);
-        result.po = dices.rollDice(moneyRollObject.poRoll);
-        result.pp = dices.rollDice(moneyRollObject.ppRoll);
+        result.cp = dices.rollDiceFormula(moneyRollObject.cpRoll);
+        result.sp = dices.rollDiceFormula(moneyRollObject.spRoll);
+        result.gp = dices.rollDiceFormula(moneyRollObject.gpRoll);
+        result.pp = dices.rollDiceFormula(moneyRollObject.ppRoll);
 
         return result;
+    },
+
+    convertToGp(moneyObject = { cp: 0, sp: 0, gp: 0, pp: 0 }) {
+        var total = 0;
+
+        if(moneyObject.cp != undefined) {
+            total += moneyObject.cp / 100;
+        }
+        if(moneyObject.sp != undefined) {
+            total += moneyObject.sp / 10;
+        }
+        if(moneyObject.gp != undefined) {
+            total += moneyObject.gp;
+        }
+        if(moneyObject.pp != undefined) {
+            total += moneyObject.pp * 10;
+        }
+
+        return total;
+    },
+
+    convertRollObjectToTableLine(rollObject) {
+        var rollObjectTr = $(document.createElement('tr'));
+        var rollObjectPercentsTd = $(document.createElement('td'));
+        var rollObjectLinkTd = $(document.createElement('td'));
+        var rollObjectPriceTd = $(document.createElement('td'));
+        if (rollObject.minPercent != rollObject.maxPercent) {
+            rollObjectPercentsTd.append(rollObject.minPercent + "-" + rollObject.maxPercent);
+        } else {
+            rollObjectPercentsTd.append(rollObject.minPercent);
+        }
+        var moneyRewardRollObject = rollObject.reward;
+        var moneyRewardObject = money.roll(moneyRewardRollObject);
+        var moneyReward = money.convertToGp(moneyRewardObject);
+        rollObjectPriceTd.append(moneyReward + " po");
+
+        rollObjectTr.append(rollObjectPercentsTd);
+        rollObjectTr.append(rollObjectLinkTd);
+        rollObjectTr.append(rollObjectPriceTd);
+
+        return rollObjectTr;
     }
 }
 
@@ -286,70 +275,43 @@ const gem = {
         } else {
             throw new Error("Table not found for grade " + grade)
         }
+    },
+
+    convertRollObjectToTableLine(rollObject) {
+        // {
+        //     "minPercent": 1,
+        //     "maxPercent": 8,
+        //     "item": "Agate",
+        //     "url": "",
+        //     "baseValue": 5,
+        //     "addedValue": "2d4"
+        // },
+        var rollObjectTr = $(document.createElement('tr'));
+        var rollObjectPercentsTd = $(document.createElement('td'));
+        var rollObjectLinkTd = $(document.createElement('td'));
+        var rollObjectPriceTd = $(document.createElement('td'));
+        var itemLink = $(document.createElement('a'));
+        itemLink.prop("href", rollObject.url);
+        itemLink.text(rollObject.item)
+        if (rollObject.minPercent != rollObject.maxPercent) {
+            rollObjectPercentsTd.append(rollObject.minPercent + "-" + rollObject.maxPercent);
+        } else {
+            rollObjectPercentsTd.append(rollObject.minPercent);
+        }
+        rollObjectLinkTd.append(itemLink);
+        var marketValue = rollObject.baseValue;
+        marketValue += dices.rollDiceFormula(rollObject.addedValue)
+        rollObjectPriceTd.append(marketValue + " po");
+
+        rollObjectTr.append(rollObjectPercentsTd);
+        rollObjectTr.append(rollObjectLinkTd);
+        rollObjectTr.append(rollObjectPriceTd);
+
+        return rollObjectTr;
     }
 }
 
 const compounds = {
-    toHtml: function () {
-
-        // Title and description
-        var compoundsDiv = $(document.createElement('div'));
-        compoundsDiv.addClass('row');
-        var compoundsCol = $(document.createElement('div'));
-        compoundsDiv.addClass('col');
-        compoundsDiv.append(compoundsCol);
-        var compoundsTitleDiv = $(document.createElement('div'));
-        compoundsTitleDiv.addClass('row')
-        var compoundsTitle = $(document.createElement('h1'));
-        compoundsTitle.text(compoundsFile.title);
-        compoundsTitleDiv.append(compoundsTitle)
-        var compoundsDescDiv = $(document.createElement('div'));
-        compoundsDescDiv.addClass('row')
-        var compoundsDesc = $(document.createElement('p'));
-        compoundsDesc.text(compoundsFile.description);
-        compoundsDescDiv.append(compoundsDesc)
-
-        var compoundsTablesDiv = $(document.createElement('div'));
-        compoundsTablesDiv.addClass('row')
-        var compoundsTablesCol = $(document.createElement('div'));
-        compoundsTablesCol.addClass('col')
-        compoundsTablesDiv.append(compoundsTablesCol);
-        // Tables
-        compoundsFile.tables.forEach(tableObject => {
-            var tableTitle = $(document.createElement('h4'));
-            tableTitle.text("Tier " + tableObject.tier + " Min:" + tableObject.minLevel + " Max:" + tableObject.maxLevel);
-            compoundsTablesCol.append(tableTitle);
-
-            var itemTable = new ItemTable(tableObject.rolls);
-            var tableHtml = itemTable.getHtml();
-
-            var randomDiv = $(document.createElement('div'));
-            randomDiv.addClass("row")
-            var randomButton = $(document.createElement('a'));
-            randomButton.addClass("btn");
-            randomButton.text("RANDOM")
-            var randomItemTable = new ItemTable();
-            var randomTable = randomItemTable.getHtml();
-            randomButton.on("click", event => {
-                var randomObject = this.rollForTier(tableObject.tier);
-                if (randomObject != undefined) {
-                    randomItemTable.addItem(randomObject);
-                }
-            });
-            randomDiv.append(randomButton)
-            randomDiv.append(randomTable)
-
-            compoundsTablesCol.append(tableHtml);
-            compoundsTablesCol.append(randomDiv);
-        });
-
-
-        compoundsCol.append(compoundsTitleDiv);
-        compoundsCol.append(compoundsDescDiv);
-        compoundsCol.append(compoundsTablesDiv);
-
-        return compoundsDiv;
-    },
 
     rollForLevel: function (level) {
         var table = compoundsFile.tables.find(tableObject => (tableObject.minLevel >= level && tableObject <= level));
@@ -370,6 +332,48 @@ const compounds = {
 
     rollForTier: function (tier) {
         var table = compoundsFile.tables.find(tableObject => (tableObject.tier == tier));
+        if (table != undefined) {
+            const randomNumber = dices.roll100();
+            var randomObject = table.rolls.find(rollObject => {
+                return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
+            });
+            if (randomObject != undefined) {
+                return randomObject;
+            } else {
+                throw new Error("Roll " + randomNumber + " not found for tier " + tier)
+            }
+        } else {
+            throw new Error("Table not found for tier " + tier)
+        }
+    },
+
+    convertRollObjectToTableLine(rollObject) {
+        var rollObjectTr = $(document.createElement('tr'));
+        var rollObjectPercentsTd = $(document.createElement('td'));
+        var rollObjectLinkTd = $(document.createElement('td'));
+        var rollObjectPriceTd = $(document.createElement('td'));
+        var itemLink = $(document.createElement('a'));
+        itemLink.prop("href", rollObject.url);
+        itemLink.text(rollObject.item)
+        if (rollObject.minPercent != rollObject.maxPercent) {
+            rollObjectPercentsTd.append(rollObject.minPercent + "-" + rollObject.maxPercent);
+        } else {
+            rollObjectPercentsTd.append(rollObject.minPercent);
+        }
+        rollObjectLinkTd.append(itemLink);
+        rollObjectPriceTd.append(rollObject.marketPrice + " po");
+
+        rollObjectTr.append(rollObjectPercentsTd);
+        rollObjectTr.append(rollObjectLinkTd);
+        rollObjectTr.append(rollObjectPriceTd);
+
+        return rollObjectTr;
+    }
+};
+
+const typeATreasure = {
+    rollForValue(value) {
+        var table = typeAFile.table;
         if (table != undefined) {
             const randomNumber = dices.roll100();
             var randomObject = table.rolls.find(rollObject => {
@@ -422,13 +426,56 @@ $(() => {
         $("#budget").append(budget + "po");
     })
 
-    console.log(gem.rollForGrade(1))
-    console.log(gem.rollForGrade(2))
-    console.log(gem.rollForGrade(3))
-    console.log(gem.rollForGrade(4))
-    console.log(gem.rollForGrade(5))
-    console.log(gem.rollForGrade(6))
+    
+    var randomCompoundsDiv = $(document.createElement('div'));
+    randomCompoundsDiv.addClass("row")
+    var randomCompoundsButton = $(document.createElement('a'));
+    randomCompoundsButton.addClass("btn");
+    randomCompoundsButton.text("Random tier 1 compounds")
+    var randomCompoundsItemTable = new ItemTable();
+    randomCompoundsButton.on("click", event => {
+        var randomObject = compounds.rollForTier(1);
+        if (randomObject != undefined) {
+            console.log(randomObject)
+            randomCompoundsItemTable.addItem(randomObject, compounds.convertRollObjectToTableLine);
+        }
+    });
+    randomCompoundsDiv.append(randomCompoundsButton)
+    randomCompoundsDiv.append(randomCompoundsItemTable.getHtml())
 
-    contentDiv.append(armorShield.toHtml())
-    contentDiv.append(compounds.toHtml())
+    var randomArmorShieldDiv = $(document.createElement('div'));
+    randomArmorShieldDiv.addClass("row")
+    var randomArmorShieldButton = $(document.createElement('a'));
+    randomArmorShieldButton.addClass("btn");
+    randomArmorShieldButton.text("Random armor/shield")
+    var randomArmorShieldItemTable = new ItemTable();
+    randomArmorShieldButton.on("click", event => {
+        var randomObject = armorShield.roll();
+        console.log(randomObject)
+        if (randomObject != undefined) {
+            randomArmorShieldItemTable.addItem(randomObject, armorShield.convertRollObjectToTableLine);
+        }
+    });
+    randomArmorShieldDiv.append(randomArmorShieldButton)
+    randomArmorShieldDiv.append(randomArmorShieldItemTable.getHtml())
+
+    var randomGemDiv = $(document.createElement('div'));
+    randomGemDiv.addClass("row")
+    var randomGemButton = $(document.createElement('a'));
+    randomGemButton.addClass("btn");
+    randomGemButton.text("Random Gem")
+    var randomGemItemTable = new ItemTable();
+    randomGemButton.on("click", event => {
+        var randomObject = gem.rollForGrade(3);
+        console.log(randomObject)
+        if (randomObject != undefined) {
+            randomGemItemTable.addItem(randomObject, gem.convertRollObjectToTableLine);
+        }
+    });
+    randomGemDiv.append(randomGemButton)
+    randomGemDiv.append(randomGemItemTable.getHtml())
+
+    contentDiv.append(randomCompoundsDiv);
+    contentDiv.append(randomArmorShieldDiv);
+    contentDiv.append(randomGemDiv);
 })

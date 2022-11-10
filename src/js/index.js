@@ -308,27 +308,31 @@ const gem = {
 }
 
 const compounds = {
-    rollForLevelBudget: function(level, budget, nbTries = 10) {
+    rollForLevelBudget: function (level, budget, nbTries = 10) {
         var attempts = [];
 
-        for(var i = 0; i < nbTries; i++) {
+        for (var i = 0; i < nbTries; i++) {
             var totalValue = 0;
             var attempt = [];
-            var currentItem = this.rollForLevel(level);
-            var currentItemValue = currentItem.marketPrice;
-            while(totalValue + currentItemValue < budget) {
-                currentItem = this.rollForLevel(level);
-                currentItemValue = currentItem.marketPrice;
-                if(currentItem != undefined) {
+            var currentItem = undefined;
+            var currentItemValue = 0;
+            do {
+                if (currentItem != undefined) {
                     attempt.push(currentItem);
+                }
+                currentItem = this.rollForLevel(level);
+                if (currentItem != undefined) {
+                    currentItemValue = currentItem.marketPrice;
+                }
+                if(attempt.length > 0) {
                     totalValue = attempt.map(item => item.marketPrice).reduce((previous, current) => current + previous);
                 }
-            }
+            } while (totalValue + currentItemValue < budget)
             attempts.push(attempt);
         }
 
         function diffWithBudget(budget, list) {
-            var sum = list.map(item => item.marketPrice).reduce((previous, current) => previous+current);
+            var sum = list.map(item => item.marketPrice).reduce((previous, current) => previous + current);
             return budget - sum;
         }
 
@@ -336,7 +340,7 @@ const compounds = {
         var bestAttempt = undefined;
         attempts.forEach(attempt => {
             var attemptDiff = diffWithBudget(budget, attempt);
-            if(attemptDiff < bestAttemptDiff) {
+            if (attemptDiff < bestAttemptDiff) {
                 bestAttemptDiff = attemptDiff;
                 bestAttempt = attempt;
             }
@@ -345,7 +349,7 @@ const compounds = {
     },
 
     rollForLevel: function (level) {
-        var table = compoundsFile.tables.find(tableObject => (tableObject.minLevel <= level && tableObject.maxLevel >= level) );
+        var table = compoundsFile.tables.find(tableObject => (tableObject.minLevel <= level && tableObject.maxLevel >= level));
         if (table != undefined) {
             const randomNumber = dices.roll100();
             var randomObject = table.rolls.find(rollObject => {

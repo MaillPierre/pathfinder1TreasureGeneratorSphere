@@ -1,0 +1,402 @@
+{
+    "title":"Coins and Gems",
+    "description":"This treasure is made up solely of coins and gemstones, which can generally be traded for their full value. The gemstones make up the majority of the value for these rewards. The exact gemstones are generated using Table 7–50 on page 388. Note that you can replace any gemstone with a piece of simple jewelry that is one grade lower, or a piece of complex jewelry that is two grades lower.",
+    "table": [
+        {
+            "value":10,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":1,
+                        "number":1
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":15,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":1,
+                        "number":1
+                    }
+                ],
+                "money": {
+                    "cpRoll": "2d6 x 10",
+                    "spRoll": "4d8",
+                    "gpRoll": "1d4",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":25,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":1,
+                        "number":2
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "5d10",
+                    "gpRoll": "1d4",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":50,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":2,
+                        "number":1
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":50,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":1,
+                        "number":3
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "3d6 x 10",
+                    "gpRoll": "3d6",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":75,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":1,
+                        "number":2
+                    },
+                    {
+                        "grade":2,
+                        "number":1
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "3d6 x 10",
+                    "gpRoll": "3d6",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":100,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":3,
+                        "number":1
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":100,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":1,
+                        "number":2
+                    },
+                    {
+                        "grade":2,
+                        "number":1
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "3d8 x 10",
+                    "gpRoll": "4d8",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":150,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":2,
+                        "number":1
+                    },
+                    {
+                        "grade":3,
+                        "number":1
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":200,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":1,
+                        "number":4
+                    },
+                    {
+                        "grade":3,
+                        "number":1
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "3d6 x 10",
+                    "gpRoll": "2d4 x 10",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":250,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":2,
+                        "number":2
+                    },
+                    {
+                        "grade":3,
+                        "number":1
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "2d4 x 10",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":500,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":4,
+                        "number":1
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":500,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":2,
+                        "number":2
+                    },
+                    {
+                        "grade":3,
+                        "number":3
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "2d4 x 10",
+                    "ppRoll": "2d4"
+                }
+            }
+        },
+        {
+            "value":750,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":2,
+                        "number":2
+                    },
+                    {
+                        "grade":3,
+                        "number":1
+                    },
+                    {
+                        "grade":4,
+                        "number":1
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "2d4 x 10",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":1000,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":5,
+                        "number":1
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":1000,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":4,
+                        "number":1
+                    },
+                    {
+                        "grade":3,
+                        "number":3
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "3d6 x 10",
+                    "ppRoll": "4d4"
+                }
+            }
+        },
+        {
+            "value":2500,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":4,
+                        "number":2
+                    },
+                    {
+                        "grade":5,
+                        "number":1
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "2d4 x 100",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":10000,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":5,
+                        "number":5
+                    },
+                    {
+                        "grade":6,
+                        "number":1
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "",
+                    "ppRoll": ""
+                }
+            }
+        },
+        {
+            "value":20000,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":6,
+                        "number":3
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "4d8 x 100",
+                    "ppRoll": "6d10 x 10"
+                }
+            }
+        },
+        {
+            "value":50000,
+            "reward": {
+                "gem": [
+                    {
+                        "grade":3,
+                        "number":10
+                    },
+                    {
+                        "grade":4,
+                        "number":4
+                    },
+                    {
+                        "grade":5,
+                        "number":6
+                    },
+                    {
+                        "grade":6,
+                        "number":8
+                    }
+                ],
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "",
+                    "ppRoll": "4d4 x 10"
+                }
+            }
+        }
+    ]
+}

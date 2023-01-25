@@ -1,7 +1,6 @@
 {
     "title": "Gems",
     "description": "When randomly determining gems, roll on the appropriate grade chart. To determine the gemstone’s total value, roll the added value and add it to the base value. If you would prefer the average value instead, simply double the base value. In addition, if the roll to determine the type of gem is an odd roll, the gem is unworked, which means its value is equal to half the total value of a normal gem of that type, but it can made into a worked gem with a successful Craft (jewelry) check of the appropriate DC based on the gem’s grade (the gem counts as the raw material cost, so the crafter need not pay that amount). On an even roll, the gem is worked, can’t be improved upon, and is worth the listed cost.",
-    "source": "http://spheresofpower.wikidot.com/loot-tables#toc6",
     "tables": [
         {
             "grade": "1",

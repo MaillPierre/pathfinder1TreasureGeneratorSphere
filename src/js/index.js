@@ -3,11 +3,15 @@ import * as EventEmitter from 'events';
 
 import compoundsFile from "../../data/compounds.json";
 import gemsFile from "../../data/gems.json";
+import artFile from "../../data/art.json";
 import treasureValuePerEncounterFile from "../../data/treasureValuePerEncounter.json";
 import armorShieldFile from "../../data/armorShield.json";
 
 import typeAFile from "../../data/typeA.json";
 import typeBFile from "../../data/typeB.json";
+import typeCFile from "../../data/typeC.json";
+
+// http://spheresofpower.wikidot.com/loot-tables
 
 
 const dices = {
@@ -307,6 +311,49 @@ const gem = {
     }
 }
 
+const art = {
+    rollForGrade(grade) {
+        var table = artFile.tables.find(tableObject => tableObject.grade == grade);
+        if (table != undefined) {
+            const randomNumber = dices.roll100();
+            var randomObject = table.rolls.find(rollObject => {
+                return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
+            });
+            if (randomObject != undefined) {
+                return randomObject;
+            } else {
+                throw new Error("Roll " + randomNumber + " not found for grade " + grade)
+            }
+        } else {
+            throw new Error("Table not found for grade " + grade)
+        }
+    },
+
+    convertRollObjectToTableLine(rollObject) {
+        var rollObjectTr = $(document.createElement('tr'));
+        var rollObjectPercentsTd = $(document.createElement('td'));
+        var rollObjectLinkTd = $(document.createElement('td'));
+        var rollObjectPriceTd = $(document.createElement('td'));
+        var itemLink = $(document.createElement('a'));
+        itemLink.prop("href", rollObject.url);
+        itemLink.text(rollObject.item)
+        if (rollObject.minPercent != rollObject.maxPercent) {
+            rollObjectPercentsTd.append(rollObject.minPercent + "-" + rollObject.maxPercent);
+        } else {
+            rollObjectPercentsTd.append(rollObject.minPercent);
+        }
+        rollObjectLinkTd.append(itemLink);
+        var marketValue = rollObject.value;
+        rollObjectPriceTd.append(marketValue + " po");
+
+        rollObjectTr.append(rollObjectPercentsTd);
+        rollObjectTr.append(rollObjectLinkTd);
+        rollObjectTr.append(rollObjectPriceTd);
+
+        return rollObjectTr;
+    }
+}
+
 const compounds = {
     rollForLevelBudget: function (level, budget, nbTries = 10) {
         var attempts = [];
@@ -554,7 +601,7 @@ $(() => {
     randomGemButton.text("Random Gem")
     var randomGemItemTable = new ItemTable();
     randomGemButton.on("click", event => {
-        var randomObject = gem.rollForGrade(3);
+        var randomObject = gem.rollForGrade(dices.roll(6));
         console.log(randomObject)
         if (randomObject != undefined) {
             randomGemItemTable.addItem(randomObject, gem.convertRollObjectToTableLine);
@@ -563,7 +610,24 @@ $(() => {
     randomGemDiv.append(randomGemButton)
     randomGemDiv.append(randomGemItemTable.getHtml())
 
+    var randomArtDiv = $(document.createElement('div'));
+    randomArtDiv.addClass("row")
+    var randomArtButton = $(document.createElement('a'));
+    randomArtButton.addClass("btn");
+    randomArtButton.text("Random Art")
+    var randomArtItemTable = new ItemTable();
+    randomArtButton.on("click", event => {
+        var randomObject = art.rollForGrade(dices.roll(6));
+        console.log(randomObject)
+        if (randomObject != undefined) {
+            randomArtItemTable.addItem(randomObject, art.convertRollObjectToTableLine);
+        }
+    });
+    randomArtDiv.append(randomArtButton)
+    randomArtDiv.append(randomArtItemTable.getHtml())
+
     contentDiv.append(compoundsGroupDiv);
     contentDiv.append(randomArmorShieldDiv);
     contentDiv.append(randomGemDiv);
+    contentDiv.append(randomArtDiv);
 })

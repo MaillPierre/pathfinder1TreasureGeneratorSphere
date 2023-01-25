@@ -1,6 +1,13 @@
 {
   "name": "Pathfinder_1_Treasure_Generator_with_Spheres",
   "source": "src/index.html",
+  "scripts": {
+    "predeploy": "rm dist/* ./*.js ./*.js.map ./*.css.map ./*.css || true",
+    "deploy": "npx parcel build",
+    "postdeploy": "sed 's/\\/index\\./\\.\\/index\\./g' dist/index.html > index.html && rm dist/index.html || true && mv dist/* .",
+    "dev": "npx parcel serve --https",
+    "predev": "rm dist/* || true"
+  },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.0",

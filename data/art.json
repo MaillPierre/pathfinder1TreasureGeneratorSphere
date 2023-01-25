@@ -1,0 +1,939 @@
+{
+    "title": "Gems",
+    "description": "When randomly determining gems, roll on the appropriate grade chart. To determine the gemstone’s total value, roll the added value and add it to the base value. If you would prefer the average value instead, simply double the base value. In addition, if the roll to determine the type of gem is an odd roll, the gem is unworked, which means its value is equal to half the total value of a normal gem of that type, but it can made into a worked gem with a successful Craft (jewelry) check of the appropriate DC based on the gem’s grade (the gem counts as the raw material cost, so the crafter need not pay that amount). On an even roll, the gem is worked, can’t be improved upon, and is worth the listed cost.",
+    "tables": [
+        {
+            "grade": "1",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 5,
+                    "item": "Bronze statuette of a warrior",
+                    "url": "",
+                    "value": 15
+                },
+                {
+                    "minPercent": 6,
+                    "maxPercent": 6,
+                    "item": "Elaborate copper wind chimes",
+                    "url": "",
+                    "value": 20
+                },
+                {
+                    "minPercent": 8,
+                    "maxPercent": 9,
+                    "item": "Copper and glass decanter",
+                    "url": "",
+                    "value": 25
+                },
+                {
+                    "minPercent": 10,
+                    "maxPercent": 17,
+                    "item": "Silver holy symbol",
+                    "url": "",
+                    "value": 25
+                },
+                {
+                    "minPercent": 18,
+                    "maxPercent": 21,
+                    "item": "Carved stone idol",
+                    "url": "",
+                    "value": 30
+                },
+                {
+                    "minPercent": 22,
+                    "maxPercent": 25,
+                    "item": "Carved stone idol",
+                    "url": "",
+                    "value": 30
+                },
+                {
+                    "minPercent": 26,
+                    "maxPercent": 29,
+                    "item": "Ivory bowl with animal carvings",
+                    "url": "",
+                    "value": 40
+                },
+                {
+                    "minPercent": 30,
+                    "maxPercent": 30,
+                    "item": "Porcelain doll with silk clothing",
+                    "url": "",
+                    "value": 40
+                },
+                {
+                    "minPercent": 31,
+                    "maxPercent": 32,
+                    "item": "Porcelain mask",
+                    "url": "",
+                    "value": 40
+                },
+                {
+                    "minPercent": 33,
+                    "maxPercent": 36,
+                    "item": "Porcelain mask",
+                    "url": "",
+                    "value": 50
+                },
+                {
+                    "minPercent": 37,
+                    "maxPercent": 39,
+                    "item": "Bronze flagon with warrior images",
+                    "url": "",
+                    "value": 50
+                },
+                {
+                    "minPercent": 40,
+                    "maxPercent": 42,
+                    "item": "Copper scepter with gold inlay",
+                    "url": "",
+                    "value": 50
+                },
+                {
+                    "minPercent": 43,
+                    "maxPercent": 44,
+                    "item": "Crystal egg with silver stand",
+                    "url": "",
+                    "value": 50
+                },
+                {
+                    "minPercent": 45,
+                    "maxPercent": 46,
+                    "item": "Painting of a noblewoman",
+                    "url": "",
+                    "value": 50
+                },
+                {
+                    "minPercent": 47,
+                    "maxPercent": 51,
+                    "item": "Polished darkwood chalice",
+                    "url": "",
+                    "value": 50
+                },
+                {
+                    "minPercent": 52,
+                    "maxPercent": 52,
+                    "item": "Silver baby rattle",
+                    "url": "",
+                    "value": 50
+                },
+                {
+                    "minPercent": 53,
+                    "maxPercent": 55,
+                    "item": "Silver chess set",
+                    "url": "",
+                    "value": 50
+                },
+                {
+                    "minPercent": 56,
+                    "maxPercent": 60,
+                    "item": "Carved ivory scroll case",
+                    "url": "",
+                    "value": 60
+                },
+                {
+                    "minPercent": 61,
+                    "maxPercent": 66,
+                    "item": "Decorated silver plate",
+                    "url": "",
+                    "value": 60
+                },
+                {
+                    "minPercent": 67,
+                    "maxPercent": 71,
+                    "item": "Ivory drinking horn with copper ends",
+                    "url": "",
+                    "value": 60
+                },
+                {
+                    "minPercent": 72,
+                    "maxPercent": 74,
+                    "item": "Silver noble family seal",
+                    "url": "",
+                    "value": 60
+                },
+                {
+                    "minPercent": 75,
+                    "maxPercent": 80,
+                    "item": "Silver statue of a dragon",
+                    "url": "",
+                    "value": 65
+                },
+                {
+                    "minPercent": 81,
+                    "maxPercent": 83,
+                    "item": "Electrum censer with silver filigree",
+                    "url": "",
+                    "value": 70
+                },
+                {
+                    "minPercent": 84,
+                    "maxPercent": 87,
+                    "item": "Silver candelabra with holy symbol",
+                    "url": "",
+                    "value": 75
+                },
+                {
+                    "minPercent": 88,
+                    "maxPercent": 90,
+                    "item": "Silver comb with ornate handle",
+                    "url": "",
+                    "value": 75
+                },
+                {
+                    "minPercent": 91,
+                    "maxPercent": 93,
+                    "item": "Silver hand mirror",
+                    "url": "",
+                    "value": 75
+                },
+                {
+                    "minPercent": 94,
+                    "maxPercent": 96,
+                    "item": "Crystal skull",
+                    "url": "",
+                    "value": 80
+                },
+                {
+                    "minPercent": 97,
+                    "maxPercent": 97,
+                    "item": "Ornate silver flute",
+                    "url": "",
+                    "value": 80
+                },
+                {
+                    "minPercent": 98,
+                    "maxPercent": 100,
+                    "item": "Engraved jade scarab",
+                    "url": "",
+                    "value": 85
+                }
+            ]
+        },
+        {
+            "grade": "2",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 2,
+                    "item": "Elaborate silver wind chimes",
+                    "url": "",
+                    "value": 60
+                },
+                {
+                    "minPercent": 3,
+                    "maxPercent": 8,
+                    "item": "Engraved gold scarab",
+                    "url": "",
+                    "value": 75
+                },
+                {
+                    "minPercent": 9,
+                    "maxPercent": 10,
+                    "item": "Painted silk fan with electrum slats",
+                    "url": "",
+                    "value": 75
+                },
+                {
+                    "minPercent": 11,
+                    "maxPercent": 12,
+                    "item": "Preserved beast head on a plaque",
+                    "url": "",
+                    "value": 75
+                },
+                {
+                    "minPercent": 13,
+                    "maxPercent": 17,
+                    "item": "Set of six silver dice",
+                    "url": "",
+                    "value": 75
+                },
+                {
+                    "minPercent": 18,
+                    "maxPercent": 20,
+                    "item": "Silver and glass decanter",
+                    "url": "",
+                    "value": 75
+                },
+                {
+                    "minPercent": 21,
+                    "maxPercent": 22,
+                    "item": "Silver bowl with lion engravings",
+                    "url": "",
+                    "value": 75
+                },
+                {
+                    "minPercent": 23,
+                    "maxPercent": 26,
+                    "item": "Silver mask",
+                    "url": "",
+                    "value": 75
+                },
+                {
+                    "minPercent": 27,
+                    "maxPercent": 30,
+                    "item": "Carved jade idol",
+                    "url": "",
+                    "value": 80
+                },
+                {
+                    "minPercent": 31,
+                    "maxPercent": 31,
+                    "item": "Porcelain doll with furs and jewelry",
+                    "url": "",
+                    "value": 80
+                },
+                {
+                    "minPercent": 32,
+                    "maxPercent": 35,
+                    "item": "Silver brazier with religious markings",
+                    "url": "",
+                    "value": 80
+                },
+                {
+                    "minPercent": 36,
+                    "maxPercent": 38,
+                    "item": "Silver flagon with religious markings",
+                    "url": "",
+                    "value": 80
+                },
+                {
+                    "minPercent": 39,
+                    "maxPercent": 41,
+                    "item": "Gold censer with silver filigree",
+                    "url": "",
+                    "value": 90
+                },
+                {
+                    "minPercent": 42,
+                    "maxPercent": 44,
+                    "item": "Gold and silver chess set",
+                    "url": "",
+                    "value": 100
+                },
+                {
+                    "minPercent": 45,
+                    "maxPercent": 45,
+                    "item": "Gold baby rattle",
+                    "url": "",
+                    "value": 100
+                },
+                {
+                    "minPercent": 46,
+                    "maxPercent": 53,
+                    "item": "Gold holy symbol",
+                    "url": "",
+                    "value": 100
+                },
+                {
+                    "minPercent": 54,
+                    "maxPercent": 56,
+                    "item": "Masterwork lyre",
+                    "url": "",
+                    "value": 100
+                },
+                {
+                    "minPercent": 57,
+                    "maxPercent": 58,
+                    "item": "Painting of a princess",
+                    "url": "",
+                    "value": 100
+                },
+                {
+                    "minPercent": 59,
+                    "maxPercent": 61,
+                    "item": "Silver cup with royal crest",
+                    "url": "",
+                    "value": 100
+                },
+                {
+                    "minPercent": 62,
+                    "maxPercent": 65,
+                    "item": "Decorated electrum plate",
+                    "url": "",
+                    "value": 110
+                },
+                {
+                    "minPercent": 66,
+                    "maxPercent": 69,
+                    "item": "Gold statue of a dragon",
+                    "url": "",
+                    "value": 110
+                },
+                {
+                    "minPercent": 70,
+                    "maxPercent": 72,
+                    "item": "Gold statue of a lion",
+                    "url": "",
+                    "value": 110
+                },
+                {
+                    "minPercent": 73,
+                    "maxPercent": 77,
+                    "item": "Gold statue of a lion",
+                    "url": "",
+                    "value": 110
+                },
+                {
+                    "minPercent": 78,
+                    "maxPercent": 81,
+                    "item": "Gold and silver hand mirror",
+                    "url": "",
+                    "value": 120
+                },
+                {
+                    "minPercent": 82,
+                    "maxPercent": 85,
+                    "item": "Silver cauldron with animal symbols",
+                    "url": "",
+                    "value": 120
+                },
+                {
+                    "minPercent": 86,
+                    "maxPercent": 88,
+                    "item": "Silver comb with gold handle",
+                    "url": "",
+                    "value": 125
+                },
+                {
+                    "minPercent": 89,
+                    "maxPercent": 90,
+                    "item": "Silver egg with dragon figurine",
+                    "url": "",
+                    "value": 125
+                },
+                {
+                    "minPercent": 91,
+                    "maxPercent": 92,
+                    "item": "Silver scepter with eagle symbols",
+                    "url": "",
+                    "value": 125
+                },
+                {
+                    "minPercent": 93,
+                    "maxPercent": 97,
+                    "item": "Silver chalice with dragon carvings",
+                    "url": "",
+                    "value": 150
+                },
+                {
+                    "minPercent": 98,
+                    "maxPercent": 100,
+                    "item": "Gold candelabra with holy symbol",
+                    "url": "",
+                    "value": 150
+                }
+            ]
+        },
+        {
+            "grade": "3",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 3,
+                    "item": "Gilded demon skull",
+                    "url": "",
+                    "value": 300
+                },
+                {
+                    "minPercent": 4,
+                    "maxPercent": 13,
+                    "item": "Marble idol",
+                    "url": "",
+                    "value": 300
+                },
+                {
+                    "minPercent": 14,
+                    "maxPercent": 19,
+                    "item": "Masterwork darkwood lute",
+                    "url": "",
+                    "value": 300
+                },
+                {
+                    "minPercent": 20,
+                    "maxPercent": 24,
+                    "item": "Engraved mithral scarab",
+                    "url": "",
+                    "value": 400
+                },
+                {
+                    "minPercent": 25,
+                    "maxPercent": 28,
+                    "item": "Gold and ivory decanter",
+                    "url": "",
+                    "value": 400
+                },
+                {
+                    "minPercent": 29,
+                    "maxPercent": 32,
+                    "item": "Gold bowl with dragon engravings",
+                    "url": "",
+                    "value": 400
+                },
+                {
+                    "minPercent": 33,
+                    "maxPercent": 35,
+                    "item": "Gold censer with platinum inlay",
+                    "url": "",
+                    "value": 400
+                },
+                {
+                    "minPercent": 36,
+                    "maxPercent": 41,
+                    "item": "Gold mask",
+                    "url": "",
+                    "value": 450
+                },
+                {
+                    "minPercent": 42,
+                    "maxPercent": 42,
+                    "item": "Gold and mithral baby rattle",
+                    "url": "",
+                    "value": 500
+                },
+                {
+                    "minPercent": 43,
+                    "maxPercent": 48,
+                    "item": "Gold chess set",
+                    "url": "",
+                    "value": 500
+                },
+                {
+                    "minPercent": 49,
+                    "maxPercent": 51,
+                    "item": "Gold flagon with religious markings",
+                    "url": "",
+                    "value": 500
+                },
+                {
+                    "minPercent": 52,
+                    "maxPercent": 56,
+                    "item": "Gold puzzle box",
+                    "url": "",
+                    "value": 500
+                },
+                {
+                    "minPercent": 57,
+                    "maxPercent": 65,
+                    "item": "Platinum holy symbol",
+                    "url": "",
+                    "value": 500
+                },
+                {
+                    "minPercent": 66,
+                    "maxPercent": 69,
+                    "item": "Gold cup with royal crest",
+                    "url": "",
+                    "value": 550
+                },
+                {
+                    "minPercent": 70,
+                    "maxPercent": 77,
+                    "item": "Gold chalice with griffon carvings",
+                    "url": "",
+                    "value": 600
+                },
+                {
+                    "minPercent": 78,
+                    "maxPercent": 81,
+                    "item": "Mithral scepter with gold inlay",
+                    "url": "",
+                    "value": 600
+                },
+                {
+                    "minPercent": 82,
+                    "maxPercent": 88,
+                    "item": "Decorated gold plate",
+                    "url": "",
+                    "value": 700
+                },
+                {
+                    "minPercent": 89,
+                    "maxPercent": 93,
+                    "item": "Gold and platinum statuette of a deity",
+                    "url": "",
+                    "value": 750
+                },
+                {
+                    "minPercent": 94,
+                    "maxPercent": 96,
+                    "item": "Gold cauldron with alchemical symbols",
+                    "url": "",
+                    "value": 750
+                },
+                {
+                    "minPercent": 97,
+                    "maxPercent": 100,
+                    "item": "Painting of a queen",
+                    "url": "",
+                    "value": 750
+                }
+            ]
+        },
+        {
+            "grade": "4",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 5,
+                    "item": "Engraved platinum scarab",
+                    "url": "",
+                    "value": 700
+                },
+                {
+                    "minPercent": 6,
+                    "maxPercent": 11,
+                    "item": "Gilded dragon skull",
+                    "url": "",
+                    "value": 800
+                },
+                {
+                    "minPercent": 12,
+                    "maxPercent": 18,
+                    "item": "Platinum bowl with arcane engravings",
+                    "url": "",
+                    "value": 800
+                },
+                {
+                    "minPercent": 19,
+                    "maxPercent": 22,
+                    "item": "Platinum censer with ornate markings",
+                    "url": "",
+                    "value": 800
+                },
+                {
+                    "minPercent": 23,
+                    "maxPercent": 26,
+                    "item": "Gold decanter with grape vine patterns",
+                    "url": "",
+                    "value": 850
+                },
+                {
+                    "minPercent": 27,
+                    "maxPercent": 31,
+                    "item": "Platinum mask",
+                    "url": "",
+                    "value": 900
+                },
+                {
+                    "minPercent": 32,
+                    "maxPercent": 36,
+                    "item": "Gold and mithral chess set",
+                    "url": "",
+                    "value": 1000
+                },
+                {
+                    "minPercent": 37,
+                    "maxPercent": 41,
+                    "item": "Gold and platinum orrery",
+                    "url": "",
+                    "value": 1000
+                },
+                {
+                    "minPercent": 42,
+                    "maxPercent": 46,
+                    "item": "Gold flute",
+                    "url": "",
+                    "value": 1000
+                },
+                {
+                    "minPercent": 47,
+                    "maxPercent": 51,
+                    "item": "Gold idol with strange carvings",
+                    "url": "",
+                    "value": 1000
+                },
+                {
+                    "minPercent": 52,
+                    "maxPercent": 52,
+                    "item": "Platinum baby rattle",
+                    "url": "",
+                    "value": 1000
+                },
+                {
+                    "minPercent": 53,
+                    "maxPercent": 55,
+                    "item": "Platinum holy symbol of a famous priest",
+                    "url": "",
+                    "value": 1000
+                },
+                {
+                    "minPercent": 56,
+                    "maxPercent": 64,
+                    "item": "Decorated platinum plate",
+                    "url": "",
+                    "value": 1100
+                },
+                {
+                    "minPercent": 65,
+                    "maxPercent": 68,
+                    "item": "Platinum cauldron with odd symbols",
+                    "url": "",
+                    "value": 1100
+                },
+                {
+                    "minPercent": 69,
+                    "maxPercent": 71,
+                    "item": "Platinum flagon with religious markings",
+                    "url": "",
+                    "value": 1100
+                },
+                {
+                    "minPercent": 72,
+                    "maxPercent": 77,
+                    "item": "Platinum cup with royal crest",
+                    "url": "",
+                    "value": 1200
+                },
+                {
+                    "minPercent": 78,
+                    "maxPercent": 81,
+                    "item": "Platinum scepter with gold inlay",
+                    "url": "",
+                    "value": 1200
+                },
+                {
+                    "minPercent": 82,
+                    "maxPercent": 87,
+                    "item": "Platinum chalice with angel carvings",
+                    "url": "",
+                    "value": 1250
+                },
+                {
+                    "minPercent": 88,
+                    "maxPercent": 93,
+                    "item": "Platinum statuette of a deity",
+                    "url": "",
+                    "value": 1300
+                },
+                {
+                    "minPercent": 94,
+                    "maxPercent": 100,
+                    "item": "Painting of a queen by a master",
+                    "url": "",
+                    "value": 1500
+                }
+            ]
+        },
+        {
+            "grade": "5",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 8,
+                    "item": "Book of lost songs by a famous bard",
+                    "url": "",
+                    "value": 3000
+                },
+                {
+                    "minPercent": 9,
+                    "maxPercent": 16,
+                    "item": "Darkwood and platinum music box",
+                    "url": "",
+                    "value": 4000
+                },
+                {
+                    "minPercent": 17,
+                    "maxPercent": 26,
+                    "item": "Mithral hourglass with diamond dust",
+                    "url": "",
+                    "value": 4000
+                },
+                {
+                    "minPercent": 27,
+                    "maxPercent": 34,
+                    "item": "Jeweled egg with epic sorcerer’s blood",
+                    "url": "",
+                    "value": 4500
+                },
+                {
+                    "minPercent": 35,
+                    "maxPercent": 37,
+                    "item": "Gold urn containing hero’s ashes",
+                    "url": "",
+                    "value": 5000
+                },
+                {
+                    "minPercent": 38,
+                    "maxPercent": 45,
+                    "item": "Helm carved from a pit fiend skull",
+                    "url": "",
+                    "value": 5000
+                },
+                {
+                    "minPercent": 46,
+                    "maxPercent": 55,
+                    "item": "Holy text penned by a saint",
+                    "url": "",
+                    "value": 5000
+                },
+                {
+                    "minPercent": 56,
+                    "maxPercent": 65,
+                    "item": "Painting of a beloved queen by a master",
+                    "url": "",
+                    "value": 5000
+                },
+                {
+                    "minPercent": 66,
+                    "maxPercent": 74,
+                    "item": "Platinum idol with mysterious markings",
+                    "url": "",
+                    "value": 5000
+                },
+                {
+                    "minPercent": 75,
+                    "maxPercent": 77,
+                    "item": "Bejeweled sword of state",
+                    "url": "",
+                    "value": 6000
+                },
+                {
+                    "minPercent": 78,
+                    "maxPercent": 83,
+                    "item": "Carved saint’s femur",
+                    "url": "",
+                    "value": 6000
+                },
+                {
+                    "minPercent": 84,
+                    "maxPercent": 88,
+                    "item": "Platinum chalice blessed by a saint",
+                    "url": "",
+                    "value": 6000
+                },
+                {
+                    "minPercent": 89,
+                    "maxPercent": 91,
+                    "item": "Glowing metallic meteor",
+                    "url": "",
+                    "value": 6500
+                },
+                {
+                    "minPercent": 92,
+                    "maxPercent": 97,
+                    "item": "Gold bejeweled royal orb",
+                    "url": "",
+                    "value": 7000
+                },
+                {
+                    "minPercent": 98,
+                    "maxPercent": 100,
+                    "item": "Crystallized dragon heart",
+                    "url": "",
+                    "value": 7500
+                }
+            ]
+        },
+        {
+            "grade": "6",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 6,
+                    "item": "Frozen vampire soul",
+                    "url": "",
+                    "value": 7000
+                },
+                {
+                    "minPercent": 7,
+                    "maxPercent": 13,
+                    "item": "Mithral-inlaid unicorn horn",
+                    "url": "",
+                    "value": 7000
+                },
+                {
+                    "minPercent": 14,
+                    "maxPercent": 16,
+                    "item": "Crystallized god breath",
+                    "url": "",
+                    "value": 10000
+                },
+                {
+                    "minPercent": 17,
+                    "maxPercent": 22,
+                    "item": "Essence of truth",
+                    "url": "",
+                    "value": 10000
+                },
+                {
+                    "minPercent": 23,
+                    "maxPercent": 31,
+                    "item": "Globe of pristine air",
+                    "url": "",
+                    "value": 10000
+                },
+                {
+                    "minPercent": 32,
+                    "maxPercent": 40,
+                    "item": "Heart of the mountain",
+                    "url": "",
+                    "value": 10000
+                },
+                {
+                    "minPercent": 41,
+                    "maxPercent": 46,
+                    "item": "Inverted soul gem",
+                    "url": "",
+                    "value": 10000
+                },
+                {
+                    "minPercent": 47,
+                    "maxPercent": 55,
+                    "item": "Orb of living water",
+                    "url": "",
+                    "value": 10000
+                },
+                {
+                    "minPercent": 56,
+                    "maxPercent": 64,
+                    "item": "Shard of pure fire",
+                    "url": "",
+                    "value": 10000
+                },
+                {
+                    "minPercent": 65,
+                    "maxPercent": 72,
+                    "item": "Unmelting ice",
+                    "url": "",
+                    "value": 10000
+                },
+                {
+                    "minPercent": 73,
+                    "maxPercent": 79,
+                    "item": "Time jewel",
+                    "url": "",
+                    "value": 11000
+                },
+                {
+                    "minPercent": 80,
+                    "maxPercent": 83,
+                    "item": "Adamantine poiuyt",
+                    "url": "",
+                    "value": 12000
+                },
+                {
+                    "minPercent": 84,
+                    "maxPercent": 89,
+                    "item": "Holy text written in saint’s blood",
+                    "url": "",
+                    "value": 12000
+                },
+                {
+                    "minPercent": 90,
+                    "maxPercent": 93,
+                    "item": "Mithral tribar",
+                    "url": "",
+                    "value": 12000
+                },
+                {
+                    "minPercent": 94,
+                    "maxPercent": 100,
+                    "item": "Ethereal tapestry",
+                    "url": "",
+                    "value": 13000
+                }
+            ]
+        }
+    ]
+}

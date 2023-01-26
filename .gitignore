@@ -105,3 +105,5 @@ dist
 .parcel-cache/
 
 PZO1123 Ultimate Equipment.pdf
+
+package-lock.json

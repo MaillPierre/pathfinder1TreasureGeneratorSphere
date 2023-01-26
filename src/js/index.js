@@ -1,11 +1,20 @@
 import $ from 'jquery';
 import * as EventEmitter from 'events';
+import { v4 as uuid } from 'uuid';
+
 
 import compoundsFile from "../../data/compounds.json";
 import gemsFile from "../../data/gems.json";
 import artFile from "../../data/art.json";
 import treasureValuePerEncounterFile from "../../data/treasureValuePerEncounter.json";
 import armorShieldFile from "../../data/armorShield.json";
+
+var treasureObject = {
+    gems: gemsFile,
+    art: artFile,
+    compounds: compoundsFile,
+    armorShield: armorShieldFile
+}
 
 import typeAFile from "../../data/typeA.json";
 import typeBFile from "../../data/typeB.json";
@@ -63,49 +72,40 @@ const dices = {
     }
 }
 
-class ItemTable {
+class ItemTable extends EventEmitter {
 
-    constructor(itemArray) {
-        this.tableDiv = $(document.createElement('table'));
-        this.tableDiv.addClass("table")
-        var tableHeader = $(document.createElement('thead'));
-        this.tableDiv.append(tableHeader);
-        var tableHeaderLine = $(document.createElement('tr'));
-        tableHeader.append(tableHeaderLine);
-        var tableHeaderPercentCell = $(document.createElement('th'));
-        tableHeaderPercentCell.attr("scope", "col");
-        tableHeaderPercentCell.append("Roll");
-        tableHeaderLine.append(tableHeaderPercentCell);
-        var tableHeaderItemCell = $(document.createElement('th'));
-        tableHeaderItemCell.attr("scope", "col");
-        tableHeaderItemCell.append("Item")
-        tableHeaderLine.append(tableHeaderItemCell);
-        var tableHeaderPriceCell = $(document.createElement('th'));
-        tableHeaderPriceCell.attr("scope", "col");
-        tableHeaderPriceCell.append("Price")
-        tableHeaderLine.append(tableHeaderPriceCell);
-        this.tableBody = $(document.createElement('tbody'));
-        this.tableDiv.append(this.tableBody)
+    constructor(itemArray = []) {
+        super();
+        this.uuid = uuid();
+        this.itemArray = itemArray;
+    }
 
-        if (itemArray != undefined) {
-            itemArray.forEach(rollObject => {
-                this.addItem(rollObject);
-
-            });
-        }
+    render() {
+        var result = `<table id=\"${this.uuid}\" class=\"table\">
+            <thead>
+                <tr>
+                    <th scope=\"col\">Roll</th>
+                    <th scope=\"col\">Item</th>
+                    <th scope=\"col\">Price</th>
+                </tr>
+            </thead>
+            <tbody>`
+        this.itemArray.forEach(item => {
+            result += item.render();
+        });
+        result += `</tbody>
+        </table>`;
+        return result;
     }
 
     clear() {
-        this.tableBody.empty();
+        this.itemArray = [];
+        this.emit("change");
     }
 
-    getHtml() {
-        return this.tableDiv;
-    }
-
-    addItem(rollObject, conversionFunction) {
-        var rollObjectLine = conversionFunction(rollObject);
-        this.tableBody.append(rollObjectLine);
+    addItem(rollObject) {
+        this.itemArray.push(rollObject);
+        this.emit("change");
     }
 
 }
@@ -170,8 +170,36 @@ const treasureValuePerEncounter = {
     }
 };
 
-const armorShield = {
+class ArmorShieldObject extends EventEmitter {
+    constructor(rollObject) {
+        super();
+        this.uuid = uuid();
+        this.treasureObject = rollObject;
+    }
 
+    render() {
+        var result = `<tr id=\"${this.uuid}\">`
+        if (this.treasureObject.minPercent != this.treasureObject.maxPercent) {
+            result += `<td>
+                    ${this.treasureObject.minPercent}-${this.treasureObject.maxPercent}
+                </td>`;
+        } else {
+            result += `<td>
+                    ${this.treasureObject.minPercent}
+                </td>`;
+        }
+        if (this.treasureObject.url != undefined) {
+            result += `<td><a href=\"${this.treasureObject.url}\">${this.treasureObject.item}</a></td>`;
+        } else {
+            result += `<td>${this.treasureObject.item}</td>`;
+        }
+        result += `<td>${this.treasureObject.price}</td>
+        </tr>`;
+        return result;
+    }
+}
+
+const armorShield = {
     roll() {
         var table = armorShieldFile.tables[0];
         if (table != undefined) {
@@ -180,36 +208,40 @@ const armorShield = {
                 return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
             });
             if (randomObject != undefined) {
-                return randomObject;
+                return new ArmorShieldObject(randomObject);
             } else {
                 throw new Error("Roll " + randomNumber + " not found")
             }
         } else {
             throw new Error("Table not found for level " + level)
         }
-    },
+    }
+}
 
-    convertRollObjectToTableLine(rollObject) {
-        var rollObjectTr = $(document.createElement('tr'));
-        var rollObjectPercentsTd = $(document.createElement('td'));
-        var rollObjectLinkTd = $(document.createElement('td'));
-        var rollObjectPriceTd = $(document.createElement('td'));
-        var itemLink = $(document.createElement('a'));
-        itemLink.prop("href", rollObject.url);
-        itemLink.text(rollObject.item)
-        if (rollObject.minPercent != rollObject.maxPercent) {
-            rollObjectPercentsTd.append(rollObject.minPercent + "-" + rollObject.maxPercent);
+class MoneyObject extends EventEmitter {
+    constructor(rollObject) {
+        super();
+        this.uuid = uuid();
+        this.treasureObject = rollObject;
+        var moneyRewardRollObject = rollObject.reward;
+        var moneyRewardObject = money.roll(moneyRewardRollObject);
+        this.moneyReward = money.convertToGp(moneyRewardObject);
+    }
+
+    render() {
+        var result = `<tr id=\"${this.uuid}\">`
+        if (this.treasureObject.minPercent != this.treasureObject.maxPercent) {
+            result += `<td>
+                    ${this.treasureObject.minPercent}-${this.treasureObject.maxPercent} %   
+                </td>`;
         } else {
-            rollObjectPercentsTd.append(rollObject.minPercent);
+            result += `<td>
+                    ${this.treasureObject.minPercent} %
+                </td>`;
         }
-        rollObjectLinkTd.append(itemLink);
-        rollObjectPriceTd.append(rollObject.marketPrice + " po");
-
-        rollObjectTr.append(rollObjectPercentsTd);
-        rollObjectTr.append(rollObjectLinkTd);
-        rollObjectTr.append(rollObjectPriceTd);
-
-        return rollObjectTr;
+        result += `<td>${this.moneyReward} po</td>
+        </tr>`;
+        return result;
     }
 }
 
@@ -222,7 +254,7 @@ const money = {
         result.gp = dices.rollDiceFormula(moneyRollObject.gpRoll);
         result.pp = dices.rollDiceFormula(moneyRollObject.ppRoll);
 
-        return result;
+        return new MoneyObject(result);
     },
 
     convertToGp(moneyObject = { cp: 0, sp: 0, gp: 0, pp: 0 }) {
@@ -242,28 +274,37 @@ const money = {
         }
 
         return total;
-    },
+    }
+}
 
-    convertRollObjectToTableLine(rollObject) {
-        var rollObjectTr = $(document.createElement('tr'));
-        var rollObjectPercentsTd = $(document.createElement('td'));
-        var rollObjectLinkTd = $(document.createElement('td'));
-        var rollObjectPriceTd = $(document.createElement('td'));
-        if (rollObject.minPercent != rollObject.maxPercent) {
-            rollObjectPercentsTd.append(rollObject.minPercent + "-" + rollObject.maxPercent);
+class GemObject extends EventEmitter {
+    constructor(rollObject) {
+        super();
+        this.uuid = uuid();
+        this.treasureObject = rollObject;
+        this.marketValue = rollObject.baseValue;
+        this.marketValue += dices.rollDiceFormula(this.treasureObject.addedValue)
+    }
+
+    render() {
+        var result = `<tr id=\"${this.uuid}\">`
+        if (this.treasureObject.minPercent != this.treasureObject.maxPercent) {
+            result += `<td>
+                    ${this.treasureObject.minPercent}-${this.treasureObject.maxPercent}
+                </td>`;
         } else {
-            rollObjectPercentsTd.append(rollObject.minPercent);
+            result += `<td>
+                    ${this.treasureObject.minPercent}
+                </td>`;
         }
-        var moneyRewardRollObject = rollObject.reward;
-        var moneyRewardObject = money.roll(moneyRewardRollObject);
-        var moneyReward = money.convertToGp(moneyRewardObject);
-        rollObjectPriceTd.append(moneyReward + " po");
-
-        rollObjectTr.append(rollObjectPercentsTd);
-        rollObjectTr.append(rollObjectLinkTd);
-        rollObjectTr.append(rollObjectPriceTd);
-
-        return rollObjectTr;
+        if (this.treasureObject.url != undefined) {
+            result += `<td><a href=\"${this.treasureObject.url}\">${this.treasureObject.item}</a></td>`;
+        } else {
+            result += `<td>${this.treasureObject.item}</td>`;
+        }
+        result += `<td>${this.marketValue} po</td>
+        </tr>`;
+        return result;
     }
 }
 
@@ -276,38 +317,44 @@ const gem = {
                 return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
             });
             if (randomObject != undefined) {
-                return randomObject;
+                return new GemObject(randomObject);
             } else {
                 throw new Error("Roll " + randomNumber + " not found for grade " + grade)
             }
         } else {
             throw new Error("Table not found for grade " + grade)
         }
-    },
+    }
+}
 
-    convertRollObjectToTableLine(rollObject) {
-        var rollObjectTr = $(document.createElement('tr'));
-        var rollObjectPercentsTd = $(document.createElement('td'));
-        var rollObjectLinkTd = $(document.createElement('td'));
-        var rollObjectPriceTd = $(document.createElement('td'));
-        var itemLink = $(document.createElement('a'));
-        itemLink.prop("href", rollObject.url);
-        itemLink.text(rollObject.item)
-        if (rollObject.minPercent != rollObject.maxPercent) {
-            rollObjectPercentsTd.append(rollObject.minPercent + "-" + rollObject.maxPercent);
+class ArtObject extends EventEmitter {
+    constructor(rollObject) {
+        super();
+        this.uuid = uuid();
+        this.treasureObject = rollObject;
+        this.marketValue = rollObject.value;
+    }
+
+    render() {
+        var result = `<tr id=\"${this.uuid}\">`
+
+        if (this.treasureObject.minPercent != this.treasureObject.maxPercent) {
+            result += `<td>
+                    ${this.treasureObject.minPercent}-${this.treasureObject.maxPercent}
+                </td>`;
         } else {
-            rollObjectPercentsTd.append(rollObject.minPercent);
+            result += `<td>
+                    ${this.treasureObject.minPercent}
+                </td>`;
         }
-        rollObjectLinkTd.append(itemLink);
-        var marketValue = rollObject.baseValue;
-        marketValue += dices.rollDiceFormula(rollObject.addedValue)
-        rollObjectPriceTd.append(marketValue + " po");
-
-        rollObjectTr.append(rollObjectPercentsTd);
-        rollObjectTr.append(rollObjectLinkTd);
-        rollObjectTr.append(rollObjectPriceTd);
-
-        return rollObjectTr;
+        if (this.treasureObject.url != undefined) {
+            result += `<td><a href=\"${this.treasureObject.url}\">${this.treasureObject.item}</a></td>`;
+        } else {
+            result += `<td>${this.treasureObject.item}</td>`;
+        }
+        result += `<td>${this.marketValue} po</td>
+        </tr>`;
+        return result;
     }
 }
 
@@ -320,37 +367,45 @@ const art = {
                 return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
             });
             if (randomObject != undefined) {
-                return randomObject;
+                return new ArtObject(randomObject);
             } else {
                 throw new Error("Roll " + randomNumber + " not found for grade " + grade)
             }
         } else {
             throw new Error("Table not found for grade " + grade)
         }
-    },
+    }
+}
 
-    convertRollObjectToTableLine(rollObject) {
-        var rollObjectTr = $(document.createElement('tr'));
-        var rollObjectPercentsTd = $(document.createElement('td'));
-        var rollObjectLinkTd = $(document.createElement('td'));
-        var rollObjectPriceTd = $(document.createElement('td'));
-        var itemLink = $(document.createElement('a'));
-        itemLink.prop("href", rollObject.url);
-        itemLink.text(rollObject.item)
-        if (rollObject.minPercent != rollObject.maxPercent) {
-            rollObjectPercentsTd.append(rollObject.minPercent + "-" + rollObject.maxPercent);
+class CompoundObject extends EventEmitter {
+
+    constructor(rollObject) {
+        super();
+        this.uuid = uuid();
+        this.treasureObject = rollObject;
+        this.marketPrice = rollObject.marketPrice;
+    }
+
+    render() {
+        var result = `<tr id=\"${this.uuid}\">`
+
+        if (this.treasureObject.minPercent != this.treasureObject.maxPercent) {
+            result += `<td>
+                    ${this.treasureObject.minPercent}-${this.treasureObject.maxPercent}
+                </td>`;
         } else {
-            rollObjectPercentsTd.append(rollObject.minPercent);
+            result += `<td>
+                    ${this.treasureObject.minPercent}
+                </td>`;
         }
-        rollObjectLinkTd.append(itemLink);
-        var marketValue = rollObject.value;
-        rollObjectPriceTd.append(marketValue + " po");
-
-        rollObjectTr.append(rollObjectPercentsTd);
-        rollObjectTr.append(rollObjectLinkTd);
-        rollObjectTr.append(rollObjectPriceTd);
-
-        return rollObjectTr;
+        if (this.treasureObject.url != undefined) {
+            result += `<td><a href=\"${this.treasureObject.url}\">${this.treasureObject.item}</a></td>`;
+        } else {
+            result += `<td>${this.treasureObject.item}</td>`;
+        }
+        result += `<td>${this.marketPrice} po</td>
+        </tr>`;
+        return result;
     }
 }
 
@@ -371,7 +426,7 @@ const compounds = {
                 if (currentItem != undefined) {
                     currentItemValue = currentItem.marketPrice;
                 }
-                if(attempt.length > 0) {
+                if (attempt.length > 0) {
                     totalValue = attempt.map(item => item.marketPrice).reduce((previous, current) => current + previous);
                 }
             } while (totalValue + currentItemValue < budget)
@@ -403,7 +458,7 @@ const compounds = {
                 return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
             });
             if (randomObject != undefined) {
-                return randomObject;
+                return new CompoundObject(randomObject);
             } else {
                 throw new Error("Roll " + randomNumber + " not found for level " + level + " in table tier " + tableObject.tier)
             }
@@ -420,7 +475,7 @@ const compounds = {
                 return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
             });
             if (randomObject != undefined) {
-                return randomObject;
+                return new CompoundObject(randomObject);
             } else {
                 throw new Error("Roll " + randomNumber + " not found for tier " + tier)
             }
@@ -428,34 +483,30 @@ const compounds = {
             throw new Error("Table not found for tier " + tier)
         }
     },
-
-    convertRollObjectToTableLine(rollObject) {
-        var rollObjectTr = $(document.createElement('tr'));
-        var rollObjectPercentsTd = $(document.createElement('td'));
-        var rollObjectLinkTd = $(document.createElement('td'));
-        var rollObjectPriceTd = $(document.createElement('td'));
-        var itemLink = $(document.createElement('a'));
-        itemLink.prop("href", rollObject.url);
-        itemLink.text(rollObject.item)
-        if (rollObject.minPercent != rollObject.maxPercent) {
-            rollObjectPercentsTd.append(rollObject.minPercent + "-" + rollObject.maxPercent);
-        } else {
-            rollObjectPercentsTd.append(rollObject.minPercent);
-        }
-        rollObjectLinkTd.append(itemLink);
-        rollObjectPriceTd.append(rollObject.marketPrice + " po");
-
-        rollObjectTr.append(rollObjectPercentsTd);
-        rollObjectTr.append(rollObjectLinkTd);
-        rollObjectTr.append(rollObjectPriceTd);
-
-        return rollObjectTr;
-    }
 };
 
 const typeATreasure = {
     rollForValue(value) {
         var table = typeAFile.table;
+        if (table != undefined) {
+            const randomNumber = dices.roll100();
+            var randomObject = table.rolls.find(rollObject => {
+                return rollObject.minPercent <= randomNumber && randomNumber <= rollObject.maxPercent;
+            });
+            if (randomObject != undefined) {
+                return randomObject;
+            } else {
+                throw new Error("Roll " + randomNumber + " not found for tier " + tier)
+            }
+        } else {
+            throw new Error("Table not found for tier " + tier)
+        }
+    }
+};
+
+const typeBTreasure = {
+    rollForValue(value) {
+        var table = typeBFile.table;
         if (table != undefined) {
             const randomNumber = dices.roll100();
             var randomObject = table.rolls.find(rollObject => {
@@ -526,7 +577,11 @@ $(() => {
             }
         });
         randomCompoundsTierDiv.append(randomCompoundsTierButton)
-        randomCompoundsTierDiv.append(randomCompoundsTierItemTable.getHtml())
+        randomCompoundsTierDiv.append(randomCompoundsTierItemTable.render())
+        randomCompoundsTierItemTable.on("change", event => {
+            $("#" + randomCompoundsTierItemTable.uuid).remove();
+            randomCompoundsTierDiv.append(randomCompoundsTierItemTable.render());
+        })
         compoundsGroupDiv.append(randomCompoundsTierDiv);
     }
     createRandomCompoundDivForTier(1)
@@ -570,10 +625,14 @@ $(() => {
         const level = Number.parseInt($("#generateCoumpoundsLevel").val());
         const budget = Number.parseInt($("#generateCoumpoundsBudget").val());
         compounds.rollForLevelBudget(level, budget).forEach(item => {
-            generateCompoundsResults.addItem(item, compounds.convertRollObjectToTableLine);
+            generateCompoundsResults.addItem(item);
         })
     });
-    generateCompoundsResultsCol.append(generateCompoundsResults.getHtml());
+    generateCompoundsResultsCol.append(generateCompoundsResults.render());
+    generateCompoundsResults.on("change", event => {
+        $("#" + generateCompoundsResults.uuid).remove();
+        generateCompoundsResultsCol.append(generateCompoundsResults.render());
+    })
     generateCompoundsDiv.append(generateCompoundsSettingsCol);
     generateCompoundsDiv.append(generateCompoundsResultsCol);
     compoundsGroupDiv.append(generateCompoundsDiv);
@@ -588,11 +647,15 @@ $(() => {
         var randomObject = armorShield.roll();
         console.log(randomObject)
         if (randomObject != undefined) {
-            randomArmorShieldItemTable.addItem(randomObject, armorShield.convertRollObjectToTableLine);
+            randomArmorShieldItemTable.addItem(randomObject);
         }
     });
     randomArmorShieldDiv.append(randomArmorShieldButton)
-    randomArmorShieldDiv.append(randomArmorShieldItemTable.getHtml())
+    randomArmorShieldDiv.append(randomArmorShieldItemTable.render())
+    randomArmorShieldItemTable.on("change", event => {
+        $("#" + randomArmorShieldItemTable.uuid).remove();
+        randomArmorShieldDiv.append(randomArmorShieldItemTable.render());
+    })
 
     var randomGemDiv = $(document.createElement('div'));
     randomGemDiv.addClass("row")
@@ -608,7 +671,11 @@ $(() => {
         }
     });
     randomGemDiv.append(randomGemButton)
-    randomGemDiv.append(randomGemItemTable.getHtml())
+    randomGemDiv.append(randomGemItemTable.render())
+    randomGemItemTable.on("change", event => {
+        $("#" + randomGemItemTable.uuid).remove();
+        randomGemDiv.append(randomGemItemTable.render());
+    })
 
     var randomArtDiv = $(document.createElement('div'));
     randomArtDiv.addClass("row")
@@ -624,7 +691,11 @@ $(() => {
         }
     });
     randomArtDiv.append(randomArtButton)
-    randomArtDiv.append(randomArtItemTable.getHtml())
+    randomArtDiv.append(randomArtItemTable.render())
+    randomArtItemTable.on("change", event => {
+        $("#" + randomArtItemTable.uuid).remove();
+        randomArtDiv.append(randomArtItemTable.render());
+    })
 
     contentDiv.append(compoundsGroupDiv);
     contentDiv.append(randomArmorShieldDiv);

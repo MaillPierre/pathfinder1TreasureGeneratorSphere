@@ -1,0 +1,2940 @@
+{
+    "title": "Potions and Oils",
+    "description": "Potions and oils",
+    "type": [
+        {
+            "grade": "lesser",
+            "quality": [
+                {
+                    "grade": "minor",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 15,
+                            "casterlevel": 1,
+                            "spelllevel": 0
+                        },
+                        {
+                            "minPercent": 16,
+                            "maxPercent": 95,
+                            "casterlevel": 1,
+                            "spelllevel": 1
+                        },
+                        {
+                            "minPercent": 96,
+                            "maxPercent": 100,
+                            "casterlevel": 3,
+                            "spelllevel": 2
+                        }
+                    ]
+                },
+                {
+                    "grade": "medium",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 10,
+                            "casterlevel": 1,
+                            "spelllevel": 1
+                        },
+                        {
+                            "minPercent": 11,
+                            "maxPercent": 55,
+                            "casterlevel": 3,
+                            "spelllevel": 2
+                        },
+                        {
+                            "minPercent": 56,
+                            "maxPercent": 100,
+                            "casterlevel": 5,
+                            "spelllevel": 3
+                        }
+                    ]
+                },
+                {
+                    "grade": "major",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 30,
+                            "casterlevel": 7,
+                            "spelllevel": 4
+                        },
+                        {
+                            "minPercent": 31,
+                            "maxPercent": 65,
+                            "casterlevel": 9,
+                            "spelllevel": 5
+                        },
+                        {
+                            "minPercent": 66,
+                            "maxPercent": 90,
+                            "casterlevel": 11,
+                            "spelllevel": 6
+                        },
+                        {
+                            "minPercent": 91,
+                            "maxPercent": 100,
+                            "casterlevel": 13,
+                            "spelllevel": 7
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": "greater",
+            "quality": [
+                {
+                    "grade": "minor",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 5,
+                            "casterlevel": 1,
+                            "spelllevel": 0
+                        },
+                        {
+                            "minPercent": 6,
+                            "maxPercent": 35,
+                            "casterlevel": 1,
+                            "spelllevel": 1
+                        },
+                        {
+                            "minPercent": 36,
+                            "maxPercent": 90,
+                            "casterlevel": 3,
+                            "spelllevel": 2
+                        },
+                        {
+                            "minPercent": 91,
+                            "maxPercent": 100,
+                            "casterlevel": 5,
+                            "spelllevel": 3
+                        }
+                    ]
+                },
+                {
+                    "grade": "medium",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 20,
+                            "casterlevel": 5,
+                            "spelllevel": 3
+                        },
+                        {
+                            "minPercent": 21,
+                            "maxPercent": 60,
+                            "casterlevel": 7,
+                            "spelllevel": 4
+                        },
+                        {
+                            "minPercent": 61,
+                            "maxPercent": 100,
+                            "casterlevel": 9,
+                            "spelllevel": 5
+                        }
+                    ]
+                },
+                {
+                    "grade": "major",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 5,
+                            "casterlevel": 11,
+                            "spelllevel": 6
+                        },
+                        {
+                            "minPercent": 6,
+                            "maxPercent": 35,
+                            "casterlevel": 13,
+                            "spelllevel": 7
+                        },
+                        {
+                            "minPercent": 36,
+                            "maxPercent": 70,
+                            "casterlevel": 15,
+                            "spelllevel": 8
+                        },
+                        {
+                            "minPercent": 71,
+                            "maxPercent": 100,
+                            "casterlevel": 17,
+                            "spelllevel": 9
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "rarity": [
+        {
+            "grade": "common",
+            "type": "arcane",
+            "minpercent": 1,
+            "maxpercent": 45
+        },
+        {
+            "grade": "uncommon",
+            "type": "arcane",
+            "minpercent": 46,
+            "maxpercent": 60
+        },
+        {
+            "grade": "common",
+            "type": "divine",
+            "minpercent": 61,
+            "maxpercent": 90
+        },
+        {
+            "grade": "uncommon",
+            "type": "divine",
+            "minpercent": 91,
+            "maxpercent": 100
+        }
+    ],
+    "scrolls": [
+        {
+            "type": "arcane",
+            "tables": [
+                {
+                    "level": 0,
+                    "rarity": "common",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 9,
+                            "spell": "Acid splash",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 10,
+                            "maxPercent": 17,
+                            "spell": "Daze",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 18,
+                            "maxPercent": 27,
+                            "spell": "Detect magic",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 28,
+                            "maxPercent": 35,
+                            "spell": "Flare",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 36,
+                            "maxPercent": 45,
+                            "spell": "Light",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 46,
+                            "maxPercent": 55,
+                            "spell": "Mage hand",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 56,
+                            "maxPercent": 63,
+                            "spell": "Mending",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 64,
+                            "maxPercent": 72,
+                            "spell": "Prestidigitation",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 73,
+                            "maxPercent": 81,
+                            "spell": "Ray of frost",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 82,
+                            "maxPercent": 91,
+                            "spell": "Read magic",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 92,
+                            "maxPercent": 100,
+                            "spell": "Touch of fatigue",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 0,
+                    "rarity": "uncommon",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 7,
+                            "spell": "Arcane mark",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 8,
+                            "maxPercent": 17,
+                            "spell": "Bleed",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 18,
+                            "maxPercent": 25,
+                            "spell": "Dancing lights",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 26,
+                            "maxPercent": 35,
+                            "spell": "Detect poison",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 36,
+                            "maxPercent": 42,
+                            "spell": "Disrupt undead",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 43,
+                            "maxPercent": 51,
+                            "spell": "Ghost sound",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 52,
+                            "maxPercent": 61,
+                            "spell": "Message",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 62,
+                            "maxPercent": 68,
+                            "spell": "Open/close",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 69,
+                            "maxPercent": 75,
+                            "spell": "Resistance",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 76,
+                            "maxPercent": 83,
+                            "spell": "Sift",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 84,
+                            "maxPercent": 92,
+                            "spell": "Spark",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 93,
+                            "maxPercent": 100,
+                            "spell": "Unwitting ally",
+                            "value": {
+                                "cp": 0,
+                                "sp": 5,
+                                "gp": 12,
+                                "pp": 0
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 1,
+                    "rarity": "common",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 5,
+                            "spell": "Burning hands",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 6,
+                            "maxPercent": 9,
+                            "spell": "Cause fear",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 10,
+                            "maxPercent": 14,
+                            "spell": "Charm person",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 15,
+                            "maxPercent": 17,
+                            "spell": "Chill touch",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 18,
+                            "maxPercent": 21,
+                            "spell": "Disguise self",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 22,
+                            "maxPercent": 24,
+                            "spell": "Endure elements",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 25,
+                            "maxPercent": 28,
+                            "spell": "Enlarge person",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 29,
+                            "maxPercent": 32,
+                            "spell": "Expeditious retreat",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 33,
+                            "maxPercent": 36,
+                            "spell": "Grease",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 37,
+                            "maxPercent": 39,
+                            "spell": "Hypnotism",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 40,
+                            "maxPercent": 42,
+                            "spell": "Identify",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 43,
+                            "maxPercent": 48,
+                            "spell": "Mage armor",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 49,
+                            "maxPercent": 54,
+                            "spell": "Magic missile",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 55,
+                            "maxPercent": 58,
+                            "spell": "Magic weapon",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 59,
+                            "maxPercent": 62,
+                            "spell": "Obscuring mist",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 63,
+                            "maxPercent": 64,
+                            "spell": "Protection from chaos",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 65,
+                            "maxPercent": 67,
+                            "spell": "Protection from evil",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 68,
+                            "maxPercent": 69,
+                            "spell": "Protection from good",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 70,
+                            "maxPercent": 71,
+                            "spell": "Protection from law",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 72,
+                            "maxPercent": 75,
+                            "spell": "Ray of enfeeblement",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 76,
+                            "maxPercent": 80,
+                            "spell": "Shield",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 81,
+                            "maxPercent": 84,
+                            "spell": "Shocking grasp",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 85,
+                            "maxPercent": 88,
+                            "spell": "Silent image",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 89,
+                            "maxPercent": 93,
+                            "spell": "Sleep",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 94,
+                            "maxPercent": 96,
+                            "spell": "Summon monster I",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 97,
+                            "maxPercent": 100,
+                            "spell": "True strike",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 1,
+                    "rarity": "uncommon",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 2,
+                            "spell": "Air bubble",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 3,
+                            "maxPercent": 6,
+                            "spell": "Alarm",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 7,
+                            "maxPercent": 8,
+                            "spell": "Animate rope",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 9,
+                            "maxPercent": 12,
+                            "spell": "Ant haul",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 13,
+                            "maxPercent": 15,
+                            "spell": "Blend",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 16,
+                            "maxPercent": 18,
+                            "spell": "Break",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 19,
+                            "maxPercent": 23,
+                            "spell": "Color spray",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 24,
+                            "maxPercent": 26,
+                            "spell": "Comprehend languages",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 27,
+                            "maxPercent": 30,
+                            "spell": "Corrosive touch",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 31,
+                            "maxPercent": 33,
+                            "spell": "Detect secret doors",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 34,
+                            "maxPercent": 36,
+                            "spell": "Detect undead",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 37,
+                            "maxPercent": 38,
+                            "spell": "Erase",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 39,
+                            "maxPercent": 40,
+                            "spell": "Flare burst",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 41,
+                            "maxPercent": 43,
+                            "spell": "Floating disk",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 44,
+                            "maxPercent": 46,
+                            "spell": "Hold portal",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 47,
+                            "maxPercent": 48,
+                            "spell": "Hydraulic push",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 49,
+                            "maxPercent": 51,
+                            "spell": "Icicle dagger",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 52,
+                            "maxPercent": 54,
+                            "spell": "Illusion of calm",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 55,
+                            "maxPercent": 58,
+                            "spell": "Jump",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 59,
+                            "maxPercent": 60,
+                            "spell": "Magic aura",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 61,
+                            "maxPercent": 63,
+                            "spell": "Mirror strike",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 64,
+                            "maxPercent": 66,
+                            "spell": "Mount",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 67,
+                            "maxPercent": 69,
+                            "spell": "Ray of sickening",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 70,
+                            "maxPercent": 71,
+                            "spell": "Reduce person",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 72,
+                            "maxPercent": 74,
+                            "spell": "Shadow weapon",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 75,
+                            "maxPercent": 77,
+                            "spell": "Shock shield",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 78,
+                            "maxPercent": 80,
+                            "spell": "Stone fist",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 81,
+                            "maxPercent": 84,
+                            "spell": "Touch of the sea",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 85,
+                            "maxPercent": 88,
+                            "spell": "Unseen servant",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 89,
+                            "maxPercent": 91,
+                            "spell": "Urban grace",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 92,
+                            "maxPercent": 96,
+                            "spell": "Vanish",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 97,
+                            "maxPercent": 98,
+                            "spell": "Ventriloquism",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 99,
+                            "maxPercent": 100,
+                            "spell": "Voice alteration",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 25,
+                                "pp": 0
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "rarity": "common",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 4,
+                            "spell": "Acid arrow",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 5,
+                            "maxPercent": 7,
+                            "spell": "Alter self",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 8,
+                            "maxPercent": 12,
+                            "spell": "Bear’s endurance",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 13,
+                            "maxPercent": 15,
+                            "spell": "Blur",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 16,
+                            "maxPercent": 20,
+                            "spell": "Bull’s strength",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 21,
+                            "maxPercent": 24,
+                            "spell": "Cat’s grace",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 25,
+                            "maxPercent": 27,
+                            "spell": "Darkness",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 28,
+                            "maxPercent": 30,
+                            "spell": "Darkvision",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 31,
+                            "maxPercent": 34,
+                            "spell": "Eagle’s splendor",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 35,
+                            "maxPercent": 37,
+                            "spell": "False life",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 38,
+                            "maxPercent": 40,
+                            "spell": "Flaming sphere",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 41,
+                            "maxPercent": 44,
+                            "spell": "Fox’s cunning",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 45,
+                            "maxPercent": 47,
+                            "spell": "Glitterdust",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 48,
+                            "maxPercent": 52,
+                            "spell": "Invisibility",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 53,
+                            "maxPercent": 54,
+                            "spell": "Knock",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 55,
+                            "maxPercent": 58,
+                            "spell": "Levitate",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 59,
+                            "maxPercent": 61,
+                            "spell": "Minor image",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 62,
+                            "maxPercent": 65,
+                            "spell": "Mirror image",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 66,
+                            "maxPercent": 69,
+                            "spell": "Owl’s wisdom",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 70,
+                            "maxPercent": 73,
+                            "spell": "Resist energy",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 74,
+                            "maxPercent": 75,
+                            "spell": "Rope trick",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 76,
+                            "maxPercent": 80,
+                            "spell": "Scorching ray",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 81,
+                            "maxPercent": 83,
+                            "spell": "See invisibility",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 84,
+                            "maxPercent": 85,
+                            "spell": "Shatter",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 86,
+                            "maxPercent": 88,
+                            "spell": "Spider climb",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 89,
+                            "maxPercent": 91,
+                            "spell": "Summon monster II",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 92,
+                            "maxPercent": 93,
+                            "spell": "Summon swarm",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 94,
+                            "maxPercent": 98,
+                            "spell": "Web",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 99,
+                            "maxPercent": 100,
+                            "spell": "Whispering wind",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "rarity": "uncommon",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 3,
+                            "spell": "Bestow weapon proficiency",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 4,
+                            "maxPercent": 6,
+                            "spell": "Blindness/deafness",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 7,
+                            "maxPercent": 9,
+                            "spell": "Burning gaze",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 10,
+                            "maxPercent": 12,
+                            "spell": "Certain grip",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 13,
+                            "maxPercent": 14,
+                            "spell": "Command undead",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 15,
+                            "maxPercent": 16,
+                            "spell": "Create pit",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 17,
+                            "maxPercent": 20,
+                            "spell": "Daze monster",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 21,
+                            "maxPercent": 23,
+                            "spell": "Detect thoughts",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 24,
+                            "maxPercent": 27,
+                            "spell": "Disguise other",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 28,
+                            "maxPercent": 31,
+                            "spell": "Elemental touch",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 32,
+                            "maxPercent": 34,
+                            "spell": "Fire breath",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 35,
+                            "maxPercent": 38,
+                            "spell": "Fog cloud",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 39,
+                            "maxPercent": 40,
+                            "spell": "Ghoul touch",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 41,
+                            "maxPercent": 41,
+                            "spell": "Glide",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 42,
+                            "maxPercent": 44,
+                            "spell": "Gust of wind",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 45,
+                            "maxPercent": 47,
+                            "spell": "Haunting mists",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 48,
+                            "maxPercent": 51,
+                            "spell": "Hideous laughter",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 52,
+                            "maxPercent": 54,
+                            "spell": "Hypnotic pattern",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 55,
+                            "maxPercent": 57,
+                            "spell": "Locate object",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 58,
+                            "maxPercent": 60,
+                            "spell": "Make whole",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 61,
+                            "maxPercent": 62,
+                            "spell": "Misdirection",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 63,
+                            "maxPercent": 63,
+                            "spell": "Obscure object",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 64,
+                            "maxPercent": 65,
+                            "spell": "Pernicious poison",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 66,
+                            "maxPercent": 67,
+                            "spell": "Protection from arrows",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 68,
+                            "maxPercent": 70,
+                            "spell": "Pyrotechnics",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 71,
+                            "maxPercent": 73,
+                            "spell": "Returning weapon",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 74,
+                            "maxPercent": 77,
+                            "spell": "Scare",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 78,
+                            "maxPercent": 80,
+                            "spell": "Shadow anchor",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 81,
+                            "maxPercent": 83,
+                            "spell": "Share memory",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 84,
+                            "maxPercent": 85,
+                            "spell": "Slipstream",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 86,
+                            "maxPercent": 88,
+                            "spell": "Spectral hand",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 89,
+                            "maxPercent": 90,
+                            "spell": "Spontaneous immolation",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 91,
+                            "maxPercent": 93,
+                            "spell": "Touch of idiocy",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 94,
+                            "maxPercent": 94,
+                            "spell": "Unshakable chill",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 150,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 95,
+                            "maxPercent": 96,
+                            "spell": "Magic mouth",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 160,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 97,
+                            "maxPercent": 97,
+                            "spell": "Arcane lock",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 175,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 98,
+                            "maxPercent": 99,
+                            "spell": "Continual flame",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 200,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 100,
+                            "maxPercent": 100,
+                            "spell": "Phantom trap",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 200,
+                                "pp": 0
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 3,
+                    "rarity": "common",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 3,
+                            "spell": "Acid arrow",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 4,
+                            "maxPercent": 7,
+                            "spell": "Blink",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 8,
+                            "maxPercent": 12,
+                            "spell": "Dispel magic",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 13,
+                            "maxPercent": 16,
+                            "spell": "Displacement",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 17,
+                            "maxPercent": 21,
+                            "spell": "Fireball",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 22,
+                            "maxPercent": 24,
+                            "spell": "Flame arrow",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 25,
+                            "maxPercent": 29,
+                            "spell": "Fly",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 30,
+                            "maxPercent": 32,
+                            "spell": "Gaseous form",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 33,
+                            "maxPercent": 37,
+                            "spell": "Haste",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 38,
+                            "maxPercent": 40,
+                            "spell": "Heroism",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 41,
+                            "maxPercent": 43,
+                            "spell": "Hold person",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 44,
+                            "maxPercent": 46,
+                            "spell": "Invisibility sphere",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 47,
+                            "maxPercent": 51,
+                            "spell": "Lightning bolt",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 52,
+                            "maxPercent": 54,
+                            "spell": "Magic circle against chaos",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 55,
+                            "maxPercent": 57,
+                            "spell": "Magic circle against evil",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 58,
+                            "maxPercent": 60,
+                            "spell": "Magic circle against good",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 61,
+                            "maxPercent": 63,
+                            "spell": "Magic circle against law",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 64,
+                            "maxPercent": 66,
+                            "spell": "Major image",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 67,
+                            "maxPercent": 70,
+                            "spell": "Phantom steed",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 71,
+                            "maxPercent": 74,
+                            "spell": "Protection from energy",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 75,
+                            "maxPercent": 78,
+                            "spell": "Slow",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 79,
+                            "maxPercent": 81,
+                            "spell": "Stinking cloud",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 82,
+                            "maxPercent": 84,
+                            "spell": "Suggestion",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 85,
+                            "maxPercent": 87,
+                            "spell": "Summon monster III",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 88,
+                            "maxPercent": 90,
+                            "spell": "Tiny hut",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 91,
+                            "maxPercent": 94,
+                            "spell": "Tongues",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 95,
+                            "maxPercent": 97,
+                            "spell": "Vampiric touch",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 98,
+                            "maxPercent": 100,
+                            "spell": "Water breathing",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 3,
+                    "rarity": "uncommon",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 3,
+                            "spell": "Animate dead, lesser",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 4,
+                            "maxPercent": 6,
+                            "spell": "Aqueous orb",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 7,
+                            "maxPercent": 8,
+                            "spell": "Arcane sight",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 9,
+                            "maxPercent": 12,
+                            "spell": "Beast shape",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 13,
+                            "maxPercent": 15,
+                            "spell": "Clairaudience/clairvoyance",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 16,
+                            "maxPercent": 17,
+                            "spell": "Cloak of winds",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 18,
+                            "maxPercent": 20,
+                            "spell": "Daylight",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 21,
+                            "maxPercent": 24,
+                            "spell": "Deep slumber",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 25,
+                            "maxPercent": 27,
+                            "spell": "Distracting cacophony",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 28,
+                            "maxPercent": 30,
+                            "spell": "Draconic reservoir",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 31,
+                            "maxPercent": 35,
+                            "spell": "Elemental aura",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 36,
+                            "maxPercent": 38,
+                            "spell": "Explosive runes",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 39,
+                            "maxPercent": 43,
+                            "spell": "Force punch",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 44,
+                            "maxPercent": 45,
+                            "spell": "Gentle repose",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 46,
+                            "maxPercent": 47,
+                            "spell": "Halt undead",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 48,
+                            "maxPercent": 49,
+                            "spell": "Healing thief",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 50,
+                            "maxPercent": 51,
+                            "spell": "Hydraulic torrent",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 52,
+                            "maxPercent": 56,
+                            "spell": "Keen edge",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 57,
+                            "maxPercent": 61,
+                            "spell": "Magic weapon, greater",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 62,
+                            "maxPercent": 65,
+                            "spell": "Monstrous physique I",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 66,
+                            "maxPercent": 68,
+                            "spell": "Rage",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 69,
+                            "maxPercent": 70,
+                            "spell": "Ray of exhaustion",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 71,
+                            "maxPercent": 73,
+                            "spell": "Resinous skin",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 74,
+                            "maxPercent": 75,
+                            "spell": "Resist energy, communal",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 76,
+                            "maxPercent": 78,
+                            "spell": "Secret page",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 79,
+                            "maxPercent": 80,
+                            "spell": "Shrink item",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 81,
+                            "maxPercent": 83,
+                            "spell": "Sleet storm",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 84,
+                            "maxPercent": 86,
+                            "spell": "Spiked pit",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 87,
+                            "maxPercent": 90,
+                            "spell": "Undead anatomy I",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 91,
+                            "maxPercent": 92,
+                            "spell": "Versatile weapon",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 93,
+                            "maxPercent": 95,
+                            "spell": "Wind wall",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 375,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 96,
+                            "maxPercent": 96,
+                            "spell": "Illusory script",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 425,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 97,
+                            "maxPercent": 99,
+                            "spell": "Nondetection",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 425,
+                                "pp": 0
+                            }
+                        },
+                        {
+                            "minPercent": 100,
+                            "maxPercent": 100,
+                            "spell": "Sepia snake sigil",
+                            "value": {
+                                "cp": 0,
+                                "sp": 0,
+                                "gp": 875,
+                                "pp": 0
+                            }
+                        }
+                    ]
+                },
+                {
+                    "level": 4,
+                    "rarity": "common",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 3,
+                            "spell": "Beast shape II",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 4,
+                            "maxPercent": 5,
+                            "spell": "Bestow curse",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 6,
+                            "maxPercent": 9,
+                            "spell": "Black tentacles",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 10,
+                            "maxPercent": 14,
+                            "spell": "Charm monster",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 15,
+                            "maxPercent": 18,
+                            "spell": "Confusion",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 19,
+                            "maxPercent": 21,
+                            "spell": "Crushing despair",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 22,
+                            "maxPercent": 26,
+                            "spell": "Dimension door",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 27,
+                            "maxPercent": 29,
+                            "spell": "Dimensional anchor",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 30,
+                            "maxPercent": 32,
+                            "spell": "Elemental body I",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 33,
+                            "maxPercent": 36,
+                            "spell": "Enervation",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 37,
+                            "maxPercent": 38,
+                            "spell": "Enlarge person, mass",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 39,
+                            "maxPercent": 43,
+                            "spell": "Fear",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 44,
+                            "maxPercent": 47,
+                            "spell": "Fire shield",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 48,
+                            "maxPercent": 50,
+                            "spell": "Globe of invulnerability, lesser",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 51,
+                            "maxPercent": 54,
+                            "spell": "Ice storm",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 55,
+                            "maxPercent": 59,
+                            "spell": "Invisibility, greater",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 60,
+                            "maxPercent": 64,
+                            "spell": "Phantasmal killer",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 65,
+                            "maxPercent": 67,
+                            "spell": "Resilient sphere",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 68,
+                            "maxPercent": 71,
+                            "spell": "Scrying",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 72,
+                            "maxPercent": 74,
+                            "spell": "Shadow conjuration",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 75,
+                            "maxPercent": 76,
+                            "spell": "Shout",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 77,
+                            "maxPercent": 78,
+                            "spell": "Solid fog",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 79,
+                            "maxPercent": 80,
+                            "spell": "Stone shape",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 81,
+                            "maxPercent": 83,
+                            "spell": "Summon monster IV",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 84,
+                            "maxPercent": 88,
+                            "spell": "Wall of fire",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 89,
+                            "maxPercent": 92,
+                            "spell": "Wall of ice",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 93,
+                            "maxPercent": 97,
+                            "spell": "Stoneskin",
+                            "value": { "cp": 0, "sp": 0, "gp": 950, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 98,
+                            "maxPercent": 100,
+                            "spell": "Animate dead",
+                            "value": { "cp": 0, "sp": 0, "gp": 1050, "pp": 0 }
+                        }
+                    ]
+                },
+                {
+                    "level": 4,
+                    "rarity": "uncommon",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 2,
+                            "spell": "Acid pit",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 3,
+                            "maxPercent": 6,
+                            "spell": "Arcane eye",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 7,
+                            "maxPercent": 10,
+                            "spell": "Ball lightning",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 11,
+                            "maxPercent": 13,
+                            "spell": "Contagion",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 14,
+                            "maxPercent": 17,
+                            "spell": "Darkvision, greater",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 18,
+                            "maxPercent": 19,
+                            "spell": "Detect scrying",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 20,
+                            "maxPercent": 23,
+                            "spell": "Dragon’s breath",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 24,
+                            "maxPercent": 28,
+                            "spell": "False life, greater",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 29,
+                            "maxPercent": 32,
+                            "spell": "Firefall",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 33,
+                            "maxPercent": 35,
+                            "spell": "Geas, lesser",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 36,
+                            "maxPercent": 39,
+                            "spell": "Ghost wolf",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 40,
+                            "maxPercent": 41,
+                            "spell": "Hallucinatory terrain",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 42,
+                            "maxPercent": 43,
+                            "spell": "Illusory wall",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 44,
+                            "maxPercent": 46,
+                            "spell": "Locate creature",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 47,
+                            "maxPercent": 50,
+                            "spell": "Minor creation",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 51,
+                            "maxPercent": 54,
+                            "spell": "Monstrous physique II",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 55,
+                            "maxPercent": 57,
+                            "spell": "Obsidian flow",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 58,
+                            "maxPercent": 59,
+                            "spell": "Phantom chariot",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 60,
+                            "maxPercent": 62,
+                            "spell": "Rainbow pattern",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 63,
+                            "maxPercent": 64,
+                            "spell": "Reduce person, mass",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 65,
+                            "maxPercent": 68,
+                            "spell": "Remove curse",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 69,
+                            "maxPercent": 71,
+                            "spell": "Secure shelter",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 72,
+                            "maxPercent": 74,
+                            "spell": "Shadow projection",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 75,
+                            "maxPercent": 79,
+                            "spell": "Shocking image",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 80,
+                            "maxPercent": 83,
+                            "spell": "Telekinetic charge",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 84,
+                            "maxPercent": 85,
+                            "spell": "True form",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 86,
+                            "maxPercent": 89,
+                            "spell": "Vermin shape I",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 90,
+                            "maxPercent": 94,
+                            "spell": "Volcanic storm",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 95,
+                            "maxPercent": 97,
+                            "spell": "Wandering star motes",
+                            "value": { "cp": 0, "sp": 0, "gp": 700, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 98,
+                            "maxPercent": 99,
+                            "spell": "Fire trap",
+                            "value": { "cp": 0, "sp": 0, "gp": 725, "pp": 0 }
+                        },
+                        {
+                            "minPercent": 100,
+                            "maxPercent": 100,
+                            "spell": "Mnemonic enhancer",
+                            "value": { "cp": 0, "sp": 0, "gp": 750, "pp": 0 }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

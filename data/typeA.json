@@ -5,157 +5,133 @@
         {
             "value": 1,
             "reward": {
-                "money": [
-                    {
-                        "cpRoll": "5d10",
-                        "spRoll": "3d4",
-                        "gpRoll": "",
-                        "ppRoll": ""
-                    }
-                ]
+                "money": {
+                    "cpRoll": "5d10",
+                    "spRoll": "3d4",
+                    "gpRoll": "",
+                    "ppRoll": ""
+                }
             }
         },
         {
             "value": 5,
             "reward": {
-                "money": [
-                    {
-                        "cpRoll": "2d6 x 10",
-                        "spRoll": "4d8",
-                        "gpRoll": "1d4",
-                        "ppRoll": ""
-                    }
-                ]
+                "money": {
+                    "cpRoll": "2d6 x 10",
+                    "spRoll": "4d8",
+                    "gpRoll": "1d4",
+                    "ppRoll": ""
+                }
             }
         },
         {
             "value": 10,
             "reward": {
-                "money": [
-                    {
-                        "cpRoll": "5d10 x 10",
-                        "spRoll": "5d10",
-                        "gpRoll": "1d8",
-                        "ppRoll": ""
-                    }
-                ]
+                "money": {
+                    "cpRoll": "5d10 x 10",
+                    "spRoll": "5d10",
+                    "gpRoll": "1d8",
+                    "ppRoll": ""
+                }
             }
         },
         {
             "value": 25,
             "reward": {
-                "money": [
-                    {
-                        "cpRoll": "2d4 x 100",
-                        "spRoll": "3d6 x 10",
-                        "gpRoll": "4d4",
-                        "ppRoll": ""
-                    }
-                ]
+                "money": {
+                    "cpRoll": "2d4 x 100",
+                    "spRoll": "3d6 x 10",
+                    "gpRoll": "4d4",
+                    "ppRoll": ""
+                }
             }
         },
         {
             "value": 50,
             "reward": {
-                "money": [
-                    {
-                        "cpRoll": "4d4 x 100",
-                        "spRoll": "4d6 x 10",
-                        "gpRoll": "8d6",
-                        "ppRoll": ""
-                    }
-                ]
+                "money": {
+                    "cpRoll": "4d4 x 100",
+                    "spRoll": "4d6 x 10",
+                    "gpRoll": "8d6",
+                    "ppRoll": ""
+                }
             }
         },
         {
             "value": 100,
             "reward": {
-                "money": [
-                    {
-                        "cpRoll": "",
-                        "spRoll": "6d8 x 10",
-                        "gpRoll": "3d4 x 10",
-                        "ppRoll": ""
-                    }
-                ]
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "6d8 x 10",
+                    "gpRoll": "3d4 x 10",
+                    "ppRoll": ""
+                }
             }
         },
         {
             "value": 200,
             "reward": {
-                "money": [
-                    {
-                        "cpRoll": "",
-                        "spRoll": "2d4 x 100",
-                        "gpRoll": "4d4 x 10",
-                        "ppRoll": "2d4"
-                    }
-                ]
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "2d4 x 100",
+                    "gpRoll": "4d4 x 10",
+                    "ppRoll": "2d4"
+                }
             }
         },
         {
             "value": 500,
             "reward": {
-                "money": [
-                    {
-                        "cpRoll": "",
-                        "spRoll": "",
-                        "gpRoll": "6d6 x 10",
-                        "ppRoll": "8d6"
-                    }
-                ]
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "6d6 x 10",
+                    "ppRoll": "8d6"
+                }
             }
         },
         {
             "value": 1000,
             "reward": {
-                "money": [
-                    {
-                        "cpRoll": "",
-                        "spRoll": "",
-                        "gpRoll": "2d4 x 100",
-                        "ppRoll": "10d10"
-                    }
-                ]
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "2d4 x 100",
+                    "ppRoll": "10d10"
+                }
             }
         },
         {
             "value": 5000,
             "reward": {
-                "money": [
-                    {
-                        "cpRoll": "",
-                        "spRoll": "",
-                        "gpRoll": "5d8 x 100",
-                        "ppRoll": "6d10 x 10"
-                    }
-                ]
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "5d8 x 100",
+                    "ppRoll": "6d10 x 10"
+                }
             }
         },
         {
             "value": 10000,
             "reward": {
-                "money": [
-                    {
-                        "cpRoll": "",
-                        "spRoll": "",
-                        "gpRoll": "2d4 x 1000",
-                        "ppRoll": "12d8 x 100"
-                    }
-                ]
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "2d4 x 1000",
+                    "ppRoll": "12d8 x 100"
+                }
             }
         },
         {
             "value": 50000,
             "reward": {
-                "money": [
-                    {
-                        "cpRoll": "",
-                        "spRoll": "",
-                        "gpRoll": "2d6 x 1000",
-                        "ppRoll": "8d10 x 100"
-                    }
-                ]
+                "money": {
+                    "cpRoll": "",
+                    "spRoll": "",
+                    "gpRoll": "2d6 x 1000",
+                    "ppRoll": "8d10 x 100"
+                }
             }
         }
     ]

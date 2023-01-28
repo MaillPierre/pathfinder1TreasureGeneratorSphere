@@ -1,0 +1,888 @@
+{
+    "title": "Potions and Oils",
+    "description": "Potions and oils",
+    "type": [
+        {
+            "grade": "lesser",
+            "quality": [
+                {
+                    "grade": "minor",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 40,
+                            "casterlevel": 1,
+                            "spelllevel": 0
+                        },
+                        {
+                            "minPercent": 41,
+                            "maxPercent": 100,
+                            "casterlevel": 1,
+                            "spelllevel": 1
+                        }
+                    ]
+                },
+                {
+                    "grade": "medium",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 25,
+                            "casterlevel": 1,
+                            "spelllevel": 1
+                        },
+                        {
+                            "minPercent": 26,
+                            "maxPercent": 85,
+                            "casterlevel": 3,
+                            "spelllevel": 2
+                        },
+                        {
+                            "minPercent": 86,
+                            "maxPercent": 100,
+                            "casterlevel": 5,
+                            "spelllevel": 3
+                        }
+                    ]
+                },
+                {
+                    "grade": "major",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 35,
+                            "casterlevel": 3,
+                            "spelllevel": 2
+                        },
+                        {
+                            "minPercent": 36,
+                            "maxPercent": 100,
+                            "casterlevel": 5,
+                            "spelllevel": 3
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "grade": "greater",
+            "quality": [
+                {
+                    "grade": "minor",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 10,
+                            "casterlevel": 1,
+                            "spelllevel": 0
+                        },
+                        {
+                            "minPercent": 11,
+                            "maxPercent": 60,
+                            "casterlevel": 1,
+                            "spelllevel": 1
+                        },
+                        {
+                            "minPercent": 61,
+                            "maxPercent": 100,
+                            "casterlevel": 3,
+                            "spelllevel": 2
+                        }
+                    ]
+                },
+                {
+                    "grade": "medium",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 10,
+                            "casterlevel": 1,
+                            "spelllevel": 1
+                        },
+                        {
+                            "minPercent": 11,
+                            "maxPercent": 50,
+                            "casterlevel": 3,
+                            "spelllevel": 2
+                        },
+                        {
+                            "minPercent": 51,
+                            "maxPercent": 100,
+                            "casterlevel": 5,
+                            "spelllevel": 3
+                        }
+                    ]
+                },
+                {
+                    "grade": "major",
+                    "rolls": [
+                        {
+                            "minPercent": 1,
+                            "maxPercent": 10,
+                            "casterlevel": 3,
+                            "spelllevel": 2
+                        },
+                        {
+                            "minPercent": 11,
+                            "maxPercent": 100,
+                            "casterlevel": 5,
+                            "spelllevel": 3
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "rarity": [
+        {
+            "grade": "common",
+            "minpercent": 1,
+            "maxpercent": 75
+        },
+        {
+            "grade": "uncommon",
+            "minpercent": 76,
+            "maxpercent": 100
+        }
+    ],
+    "potions": [
+        {
+            "level": 0,
+            "rarity": "common",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 14,
+                    "spell": "Arcane mark",
+                    "value": 25
+                },
+                {
+                    "minPercent": 15,
+                    "maxPercent": 28,
+                    "spell": "Guidance",
+                    "value": 25
+                },
+                {
+                    "minPercent": 29,
+                    "maxPercent": 44,
+                    "spell": "Light",
+                    "value": 25
+                },
+                {
+                    "minPercent": 45,
+                    "maxPercent": 58,
+                    "spell": "Purify food and drink",
+                    "value": 25
+                },
+                {
+                    "minPercent": 59,
+                    "maxPercent": 72,
+                    "spell": "Resistance",
+                    "value": 25
+                },
+                {
+                    "minPercent": 73,
+                    "maxPercent": 86,
+                    "spell": "Stabilize",
+                    "value": 25
+                },
+                {
+                    "minPercent": 87,
+                    "maxPercent": 100,
+                    "spell": "Virtue",
+                    "value": 25
+                }
+            ]
+        },
+        {
+            "level": 1,
+            "rarity": "common",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 4,
+                    "spell": "Bless weapon",
+                    "value": 50
+                },
+                {
+                    "minPercent": 5,
+                    "maxPercent": 14,
+                    "spell": "Cure light wounds",
+                    "value": 50
+                },
+                {
+                    "minPercent": 15,
+                    "maxPercent": 19,
+                    "spell": "Endure elements",
+                    "value": 50
+                },
+                {
+                    "minPercent": 20,
+                    "maxPercent": 27,
+                    "spell": "Enlarge person",
+                    "value": 50
+                },
+                {
+                    "minPercent": 28,
+                    "maxPercent": 33,
+                    "spell": "Jump",
+                    "value": 50
+                },
+                {
+                    "minPercent": 34,
+                    "maxPercent": 41,
+                    "spell": "Mage armor",
+                    "value": 50
+                },
+                {
+                    "minPercent": 42,
+                    "maxPercent": 47,
+                    "spell": "Magic fang",
+                    "value": 50
+                },
+                {
+                    "minPercent": 48,
+                    "maxPercent": 55,
+                    "spell": "Magic weapon",
+                    "value": 50
+                },
+                {
+                    "minPercent": 56,
+                    "maxPercent": 60,
+                    "spell": "Pass without trace",
+                    "value": 50
+                },
+                {
+                    "minPercent": 61,
+                    "maxPercent": 64,
+                    "spell": "Protection from chaos",
+                    "value": 50
+                },
+                {
+                    "minPercent": 65,
+                    "maxPercent": 68,
+                    "spell": "Protection from evil",
+                    "value": 50
+                },
+                {
+                    "minPercent": 69,
+                    "maxPercent": 72,
+                    "spell": "Protection from good",
+                    "value": 50
+                },
+                {
+                    "minPercent": 73,
+                    "maxPercent": 76,
+                    "spell": "Protection from law",
+                    "value": 50
+                },
+                {
+                    "minPercent": 77,
+                    "maxPercent": 81,
+                    "spell": "Reduce person",
+                    "value": 50
+                },
+                {
+                    "minPercent": 82,
+                    "maxPercent": 87,
+                    "spell": "Remove fear",
+                    "value": 50
+                },
+                {
+                    "minPercent": 88,
+                    "maxPercent": 92,
+                    "spell": "Sanctuary",
+                    "value": 50
+                },
+                {
+                    "minPercent": 93,
+                    "maxPercent": 100,
+                    "spell": "Shield of faith",
+                    "value": 50
+                }
+            ]
+        },
+        {
+            "level": 1,
+            "rariry": "uncommon",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 4,
+                    "spell": "Animate rope",
+                    "value": 50
+                },
+                {
+                    "minPercent": 5,
+                    "maxPercent": 11,
+                    "spell": "Ant haul",
+                    "value": 50
+                },
+                {
+                    "minPercent": 12,
+                    "maxPercent": 16,
+                    "spell": "Cloak of the shade",
+                    "value": 50
+                },
+                {
+                    "minPercent": 17,
+                    "maxPercent": 20,
+                    "spell": "Erase",
+                    "value": 50
+                },
+                {
+                    "minPercent": 21,
+                    "maxPercent": 26,
+                    "spell": "Feather step",
+                    "value": 50
+                },
+                {
+                    "minPercent": 27,
+                    "maxPercent": 30,
+                    "spell": "Goodberry",
+                    "value": 50
+                },
+                {
+                    "minPercent": 31,
+                    "maxPercent": 34,
+                    "spell": "Grease",
+                    "value": 50
+                },
+                {
+                    "minPercent": 35,
+                    "maxPercent": 41,
+                    "spell": "Hide from animals",
+                    "value": 50
+                },
+                {
+                    "minPercent": 42,
+                    "maxPercent": 49,
+                    "spell": "Hide from undead",
+                    "value": 50
+                },
+                {
+                    "minPercent": 50,
+                    "maxPercent": 53,
+                    "spell": "Hold portal",
+                    "value": 50
+                },
+                {
+                    "minPercent": 54,
+                    "maxPercent": 58,
+                    "spell": "Invigorate",
+                    "value": 50
+                },
+                {
+                    "minPercent": 59,
+                    "maxPercent": 64,
+                    "spell": "Keen senses",
+                    "value": 50
+                },
+                {
+                    "minPercent": 65,
+                    "maxPercent": 68,
+                    "spell": "Magic stone",
+                    "value": 50
+                },
+                {
+                    "minPercent": 69,
+                    "maxPercent": 75,
+                    "spell": "Remove sickness",
+                    "value": 50
+                },
+                {
+                    "minPercent": 76,
+                    "maxPercent": 80,
+                    "spell": "Sanctify corpse",
+                    "value": 50
+                },
+                {
+                    "minPercent": 81,
+                    "maxPercent": 84,
+                    "spell": "Shillelagh",
+                    "value": 50
+                },
+                {
+                    "minPercent": 85,
+                    "maxPercent": 92,
+                    "spell": "Touch of the sea",
+                    "value": 50
+                },
+                {
+                    "minPercent": 93,
+                    "maxPercent": 100,
+                    "spell": "Vanish",
+                    "value": 50
+                }
+            ]
+        },
+        {
+            "level": 2,
+            "rarity": "common",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 4,
+                    "spell": "Aid",
+                    "value": 300
+                },
+                {
+                    "minPercent": 5,
+                    "maxPercent": 7,
+                    "spell": "Align weapon",
+                    "value": 300
+                },
+                {
+                    "minPercent": 8,
+                    "maxPercent": 11,
+                    "spell": "Barkskin",
+                    "value": 300
+                },
+                {
+                    "minPercent": 12,
+                    "maxPercent": 16,
+                    "spell": "Bear’s endurance",
+                    "value": 300
+                },
+                {
+                    "minPercent": 17,
+                    "maxPercent": 20,
+                    "spell": "Blur",
+                    "value": 300
+                },
+                {
+                    "minPercent": 21,
+                    "maxPercent": 25,
+                    "spell": "Bull’s strength",
+                    "value": 300
+                },
+                {
+                    "minPercent": 26,
+                    "maxPercent": 30,
+                    "spell": "Cat’s grace",
+                    "value": 300
+                },
+                {
+                    "minPercent": 31,
+                    "maxPercent": 37,
+                    "spell": "Cure moderate wounds",
+                    "value": 300
+                },
+                {
+                    "minPercent": 38,
+                    "maxPercent": 41,
+                    "spell": "Darkvision",
+                    "value": 300
+                },
+                {
+                    "minPercent": 42,
+                    "maxPercent": 44,
+                    "spell": "Delay poison",
+                    "value": 300
+                },
+                {
+                    "minPercent": 45,
+                    "maxPercent": 49,
+                    "spell": "Eagle’s splendor",
+                    "value": 300
+                },
+                {
+                    "minPercent": 50,
+                    "maxPercent": 54,
+                    "spell": "Fox’s cunning",
+                    "value": 300
+                },
+                {
+                    "minPercent": 55,
+                    "maxPercent": 61,
+                    "spell": "Invisibility",
+                    "value": 300
+                },
+                {
+                    "minPercent": 62,
+                    "maxPercent": 66,
+                    "spell": "Levitate",
+                    "value": 300
+                },
+                {
+                    "minPercent": 67,
+                    "maxPercent": 71,
+                    "spell": "Owl’s wisdom",
+                    "value": 300
+                },
+                {
+                    "minPercent": 72,
+                    "maxPercent": 73,
+                    "spell": "Protection from arrows",
+                    "value": 300
+                },
+                {
+                    "minPercent": 74,
+                    "maxPercent": 76,
+                    "spell": "Remove paralysis",
+                    "value": 300
+                },
+                {
+                    "minPercent": 77,
+                    "maxPercent": 80,
+                    "spell": "Resist energy, acid",
+                    "value": 300
+                },
+                {
+                    "minPercent": 81,
+                    "maxPercent": 84,
+                    "spell": "Resist energy, cold",
+                    "value": 300
+                },
+                {
+                    "minPercent": 85,
+                    "maxPercent": 88,
+                    "spell": "Resist energy, electricity",
+                    "value": 300
+                },
+                {
+                    "minPercent": 89,
+                    "maxPercent": 92,
+                    "spell": "Resist energy, fire",
+                    "value": 300
+                },
+                {
+                    "minPercent": 93,
+                    "maxPercent": 94,
+                    "spell": "Resist energy, sonic",
+                    "value": 300
+                },
+                {
+                    "minPercent": 95,
+                    "maxPercent": 98,
+                    "spell": "Spider climb",
+                    "value": 300
+                },
+                {
+                    "minPercent": 99,
+                    "maxPercent": 100,
+                    "spell": "Undetectable alignment",
+                    "value": 300
+                }
+            ]
+        },
+        {
+            "level": 2,
+            "rarity": "uncommon",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 6,
+                    "spell": "Ablative barrier",
+                    "value": 300
+                },
+                {
+                    "minPercent": 7,
+                    "maxPercent": 14,
+                    "spell": "Acute senses",
+                    "value": 300
+                },
+                {
+                    "minPercent": 15,
+                    "maxPercent": 19,
+                    "spell": "Arcane lock",
+                    "value": 300
+                },
+                {
+                    "minPercent": 20,
+                    "maxPercent": 24,
+                    "spell": "Bullet shield",
+                    "value": 300
+                },
+                {
+                    "minPercent": 25,
+                    "maxPercent": 30,
+                    "spell": "Certain grip",
+                    "value": 300
+                },
+                {
+                    "minPercent": 31,
+                    "maxPercent": 35,
+                    "spell": "Continual flame",
+                    "value": 350
+                },
+                {
+                    "minPercent": 36,
+                    "maxPercent": 40,
+                    "spell": "Corruption resistance",
+                    "value": 300
+                },
+                {
+                    "minPercent": 41,
+                    "maxPercent": 48,
+                    "spell": "Disguise other",
+                    "value": 300
+                },
+                {
+                    "minPercent": 49,
+                    "maxPercent": 56,
+                    "spell": "Gentle repose",
+                    "value": 300
+                },
+                {
+                    "minPercent": 57,
+                    "maxPercent": 61,
+                    "spell": "Make whole",
+                    "value": 300
+                },
+                {
+                    "minPercent": 62,
+                    "maxPercent": 67,
+                    "spell": "Obscure object",
+                    "value": 300
+                },
+                {
+                    "minPercent": 68,
+                    "maxPercent": 72,
+                    "spell": "Reduce animal",
+                    "value": 300
+                },
+                {
+                    "minPercent": 73,
+                    "maxPercent": 76,
+                    "spell": "Rope trick",
+                    "value": 300
+                },
+                {
+                    "minPercent": 77,
+                    "maxPercent": 82,
+                    "spell": "Slipstream",
+                    "value": 300
+                },
+                {
+                    "minPercent": 83,
+                    "maxPercent": 90,
+                    "spell": "Status",
+                    "value": 300
+                },
+                {
+                    "minPercent": 91,
+                    "maxPercent": 95,
+                    "spell": "Warp wood",
+                    "value": 300
+                },
+                {
+                    "minPercent": 96,
+                    "maxPercent": 100,
+                    "spell": "Wood shape",
+                    "value": 300
+                }
+            ]
+        },
+        {
+            "level": 3,
+            "rarity": "common",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 6,
+                    "spell": "Cure serious wounds",
+                    "value": 750
+                },
+                {
+                    "minPercent": 7,
+                    "maxPercent": 10,
+                    "spell": "Dispel magic",
+                    "value": 750
+                },
+                {
+                    "minPercent": 11,
+                    "maxPercent": 14,
+                    "spell": "Displacement",
+                    "value": 750
+                },
+                {
+                    "minPercent": 15,
+                    "maxPercent": 18,
+                    "spell": "Fly",
+                    "value": 750
+                },
+                {
+                    "minPercent": 19,
+                    "maxPercent": 22,
+                    "spell": "Gaseous form",
+                    "value": 750
+                },
+                {
+                    "minPercent": 23,
+                    "maxPercent": 26,
+                    "spell": "Good hope",
+                    "value": 750
+                },
+                {
+                    "minPercent": 27,
+                    "maxPercent": 30,
+                    "spell": "Haste",
+                    "value": 750
+                },
+                {
+                    "minPercent": 31,
+                    "maxPercent": 34,
+                    "spell": "Heroism",
+                    "value": 750
+                },
+                {
+                    "minPercent": 35,
+                    "maxPercent": 38,
+                    "spell": "Keen edge",
+                    "value": 750
+                },
+                {
+                    "minPercent": 39,
+                    "maxPercent": 42,
+                    "spell": "Magic fang, greater",
+                    "value": 750
+                },
+                {
+                    "minPercent": 43,
+                    "maxPercent": 46,
+                    "spell": "Magic vestment",
+                    "value": 750
+                },
+                {
+                    "minPercent": 47,
+                    "maxPercent": 50,
+                    "spell": "Neutralize poison",
+                    "value": 750
+                },
+                {
+                    "minPercent": 51,
+                    "maxPercent": 54,
+                    "spell": "Protection from energy, acid",
+                    "value": 750
+                },
+                {
+                    "minPercent": 55,
+                    "maxPercent": 58,
+                    "spell": "Protection from energy, cold",
+                    "value": 750
+                },
+                {
+                    "minPercent": 59,
+                    "maxPercent": 62,
+                    "spell": "Protection from energy, electricity",
+                    "value": 750
+                },
+                {
+                    "minPercent": 63,
+                    "maxPercent": 66,
+                    "spell": "Protection from energy, fire",
+                    "value": 750
+                },
+                {
+                    "minPercent": 67,
+                    "maxPercent": 70,
+                    "spell": "Protection from energy, sonic",
+                    "value": 750
+                },
+                {
+                    "minPercent": 71,
+                    "maxPercent": 74,
+                    "spell": "Rage",
+                    "value": 750
+                },
+                {
+                    "minPercent": 75,
+                    "maxPercent": 77,
+                    "spell": "Remove blindness/deafness",
+                    "value": 750
+                },
+                {
+                    "minPercent": 78,
+                    "maxPercent": 81,
+                    "spell": "Remove curse",
+                    "value": 750
+                },
+                {
+                    "minPercent": 82,
+                    "maxPercent": 86,
+                    "spell": "Remove disease",
+                    "value": 750
+                },
+                {
+                    "minPercent": 87,
+                    "maxPercent": 91,
+                    "spell": "Tongues",
+                    "value": 750
+                },
+                {
+                    "minPercent": 92,
+                    "maxPercent": 96,
+                    "spell": "Water breathing",
+                    "value": 750
+                },
+                {
+                    "minPercent": 97,
+                    "maxPercent": 100,
+                    "spell": "Water walk",
+                    "value": 750
+                }
+            ]
+        },
+        {
+            "level": 3,
+            "rarity": "uncommon",
+            "rolls": [
+                {
+                    "minPercent": 1,
+                    "maxPercent": 12,
+                    "spell": "Burrow",
+                    "value": 750
+                },
+                {
+                    "minPercent": 13,
+                    "maxPercent": 22,
+                    "spell": "Countless eyes",
+                    "value": 750
+                },
+                {
+                    "minPercent": 23,
+                    "maxPercent": 34,
+                    "spell": "Daylight",
+                    "value": 750
+                },
+                {
+                    "minPercent": 35,
+                    "maxPercent": 49,
+                    "spell": "Draconic reservoir",
+                    "value": 750
+                },
+                {
+                    "minPercent": 50,
+                    "maxPercent": 58,
+                    "spell": "Flame arrow",
+                    "value": 750
+                },
+                {
+                    "minPercent": 59,
+                    "maxPercent": 67,
+                    "spell": "Shrink item",
+                    "value": 750
+                },
+                {
+                    "minPercent": 68,
+                    "maxPercent": 77,
+                    "spell": "Stone shape",
+                    "value": 750
+                },
+                {
+                    "minPercent": 78,
+                    "maxPercent": 87,
+                    "spell": "Fire trap",
+                    "value": 775
+                },
+                {
+                    "minPercent": 88,
+                    "maxPercent": 100,
+                    "spell": "Nondetection",
+                    "value": 800
+                }
+            ]
+        }
+    ]
+}
